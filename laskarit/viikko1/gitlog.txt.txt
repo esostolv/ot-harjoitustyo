@@ -1,0 +1,116 @@
+Laitetaan tänne vielä vähän tarinaa alkuun..
+
+commit 0b332ecbbb7db18e16c785c297887fa57eef10af
+Author: oskarito <oskari.tolvanen@helsinki.fi>
+Date:   Sun Mar 21 23:00:33 2021 +0200
+
+    Poistettu 1 ja nimetty 2 uusiksi
+
+ tiedostoja/{file2.txt => file22.txt} | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 900fe5fe55dc5edb95b276b26f6b052886700b25
+Author: oskarito <oskari.tolvanen@helsinki.fi>
+Date:   Sun Mar 21 22:57:37 2021 +0200
+
+    Lisätään tiedostot 1-3
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 14b2eb3276121e343fd4125b866e40bdbad5a684
+Author: oskarito <oskari.tolvanen@helsinki.fi>
+Date:   Sun Mar 21 22:55:35 2021 +0200
+
+    lisätty tiedostot
+
+ file1.txt | 0
+ file2.txt | 0
+ file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit ee368dc486d422386b984f3de29b7fd04509c702
+Author: oskarito <oskari.tolvanen@helsinki.fi>
+Date:   Sun Mar 21 22:52:56 2021 +0200
+
+    muutokset ekaan ja kolmoseen
+
+ eka.txt    | 3 ---
+ kolmas.txt | 3 ++-
+ 2 files changed, 2 insertions(+), 4 deletions(-)
+
+commit e6cf3045e4a1c6f181f87552f329a7bc40a014e5
+Author: oskarito <oskari.tolvanen@helsinki.fi>
+Date:   Sun Mar 21 22:51:31 2021 +0200
+
+    Lisätään eka
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit fdfa718643422389f645bc1320295b374cbed5d7
+Author: oskarito <oskari.tolvanen@helsinki.fi>
+Date:   Sun Mar 21 22:49:24 2021 +0200
+
+    Poistetaan toinen
+
+ kolmas.txt | 1 +
+ toinen.txt | 0
+ 2 files changed, 1 insertion(+)
+
+commit 6bd40d4a1f654527080a4b54a9117723950c6d0d
+Author: oskarito <oskari.tolvanen@helsinki.fi>
+Date:   Sun Mar 21 22:46:07 2021 +0200
+
+    muokattu uudelleen tiedosto.txt
+
+ tiedosto.txt | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+commit e540ef74a334696cf26ebefb9cf36d05b6633544
+Author: oskarito <oskari.tolvanen@helsinki.fi>
+Date:   Sun Mar 21 22:44:58 2021 +0200
+
+    muokattu tiedosto.txt
+
+ tiedosto.txt | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 910c359e1922388683cffc2649e84947de687ead
+Author: oskarito <oskari.tolvanen@helsinki.fi>
+Date:   Sun Mar 21 21:53:21 2021 +0200
+
+    Lisättiin tiedosto
+
+ stuff/tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit c58f4de534f061771079b7a82be99b5d45f78297
+Author: oskarito <oskari.tolvanen@helsinki.fi>
+Date:   Sun Mar 21 21:51:56 2021 +0200
+
+    kolmas luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 27af7d21117edd1fb1647204b5ea57bc5dc9b0ab
+Author: oskarito <oskari.tolvanen@helsinki.fi>
+Date:   Sun Mar 21 00:11:59 2021 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit a9a18c377c3527154332e7801c842e30c41b7dae
+Author: oskarito <oskari.tolvanen@helsinki.fi>
+Date:   Sun Mar 21 00:10:48 2021 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
