@@ -4,5 +4,5 @@
 [komentorivi.txt](https://github.com/esostolv/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt) <br>
 
 ## Viikko 2 <h2>
-[Vaativuusmäärittely]
-[Työaikakirjanpito]
+[Vaativuusmäärittely](https://github.com/esostolv/ot-harjoitustyo/blob/master/dokumentaatio/vaativuusmaarittely.md) <br>
+[Työaikakirjanpito](https://github.com/esostolv/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md) <br>
