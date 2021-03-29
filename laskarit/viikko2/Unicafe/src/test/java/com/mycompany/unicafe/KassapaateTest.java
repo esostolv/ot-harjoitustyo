@@ -7,10 +7,14 @@ import org.junit.Test;
 public class KassapaateTest {
 
     Kassapaate paate;
+    Maksukortti rikas;
+    Maksukortti koyha;
 
       @Before
     public void setUp() {
         paate = new Kassapaate();
+        rikas = new Maksukortti(500);
+        koyha = new Maksukortti(20);
     }
     
     @Test
@@ -88,5 +92,44 @@ public class KassapaateTest {
     public void syoMaukkaastiEiLisaaMyytyjaLounaita() {
         paate.syoMaukkaasti(390);
         assertEquals(0, paate.maukkaitaLounaitaMyyty());      
+    }
+    
+    @Test
+    public void syoMaukkaastiKortillaOttaaRahat() {
+        paate.syoMaukkaasti(rikas);
+        assertEquals(100, rikas.saldo());      
+    }
+    
+    @Test
+    public void syoMaukkaastiKortillaPalauttaaTrue() {
+        assertTrue(paate.syoMaukkaasti(rikas));      
+    }
+    
+    @Test
+    public void syoMaukkaastiKortillaLisaaMaaraa() {
+        paate.syoMaukkaasti(rikas);
+        assertEquals(1, paate.maukkaitaLounaitaMyyty());     
+    }
+    
+    @Test
+    public void syoMaukkaastiKortillaEiOtaRahojaJosKoyha() {
+        paate.syoMaukkaasti(koyha);
+        assertEquals(20, koyha.saldo());      
+    }
+    
+    @Test
+    public void syoMaukkaastiKortillaPalauttaaFalseJosEiRahaa() {
+        assertFalse(paate.syoMaukkaasti(koyha));      
+    }
+    
+    @Test
+    public void syoMaukkaastiKortillaEiLisaaMaaraaJosEiRahaa() {
+        paate.syoMaukkaasti(koyha);
+        assertEquals(0, paate.maukkaitaLounaitaMyyty());     
+    }
+    @Test
+    public void kassassaOlevaRahamaaraEiMuutuJosKortillaMaukkaasti() {
+        paate.syoMaukkaasti(rikas);
+        assertEquals(100000, paate.kassassaRahaa);     
     }
 }
