@@ -46,13 +46,11 @@ public class MaksukorttiTest {
     @Test
     public void metodiPalauttaaTrueJosRahatRiittaa() {
 	kortti.lataaRahaa(1000);
-	kortti.otaRahaa(510);
-	assertTrue(kortti.otaRahaa());
+	assertTrue(kortti.otaRahaa(510));
     }
 
     @Test
     public void metodiPalauttaaFalseJosRahatEiRiita() {
-	kortti.otaRahaa(50);
-	assertFalse(kortti.otaRahaa());
+	assertFalse(kortti.otaRahaa(50));
     }
 }
