@@ -167,8 +167,18 @@ public class KassapaateTest {
         assertEquals(0, paate.edullisiaLounaitaMyyty());     
     }
     @Test
-    public void kassassaOlevaRahamaaraEiMuutuJosKortillaMaukkaasti() {
+    public void kassassaOlevaRahamaaraEiMuutuJosKortillaEdullisesti() {
         paate.syoEdullisesti(rikas);
         assertEquals(100000, paate.kassassaRahaa());     
+    }
+    @Test
+    public void kortinSaldoMuuttuu() {
+        paate.lataaRahaaKortille(rikas, 100);
+        assertEquals(600, rikas.saldo());     
+    }
+    @Test
+    public void kassaanLisaaRahaa() {
+        paate.lataaRahaaKortille(rikas, 100);
+        assertEquals(100100, paate.kassassaRahaa());     
     }
 }
