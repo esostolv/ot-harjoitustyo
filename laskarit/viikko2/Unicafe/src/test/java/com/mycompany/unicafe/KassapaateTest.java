@@ -26,7 +26,7 @@ public class KassapaateTest {
     
     @Test
     public void kassanRahamaaraKasvaaEdullisenHinnalla() {
-        paate.syoEdullisesti(300)
+        paate.syoEdullisesti(300);
         assertEquals(100240, paate.kassassaRahaa());      
     }
     
