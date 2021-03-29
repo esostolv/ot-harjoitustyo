@@ -47,12 +47,12 @@ public class MaksukorttiTest {
     public void metodiPalauttaaTrueJosRahatRiittaa() {
 	kortti.lataaRahaa(1000);
 	kortti.otaRahaa(510);
-	assertEquals(true, kortti.otaRahaa());
+	assertTrue(kortti.otaRahaa());
     }
 
     @Test
     public void metodiPalauttaaFalseJosRahatEiRiita() {
 	kortti.otaRahaa(50);
-	assertEquals(false, kortti.otaRahaa());
+	assertFalse(kortti.otaRahaa());
     }
 }
