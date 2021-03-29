@@ -181,4 +181,9 @@ public class KassapaateTest {
         paate.lataaRahaaKortille(rikas, 100);
         assertEquals(100100, paate.kassassaRahaa());     
     }
+    @Test
+    public void kassaanLisaaRahaaMiinus() {
+        paate.lataaRahaaKortille(rikas, -1);
+        assertEquals(100000, paate.kassassaRahaa());     
+    }
 }
