@@ -34,7 +34,7 @@ public class MaksukorttiTest {
     public void saldoVaheneeOikeinJosRahaaTarpeeksi() {
 	kortti.lataaRahaa(1000);
 	kortti.otaRahaa(510);
-	assert.Equals("saldo: 5.0", kortti.toString());
+	assertEquals("saldo: 5.0", kortti.toString());
     }
 	
     @Test
@@ -47,12 +47,12 @@ public class MaksukorttiTest {
     public void metodiPalauttaaTrueJosRahatRiittaa() {
 	kortti.lataaRahaa(1000);
 	kortti.otaRahaa(510);
-	assert.Equals(true, kortti.otaRahaa());
+	assertEquals(true, kortti.otaRahaa());
     }
 
     @Test
     public void metodiPalauttaaFalseJosRahatEiRiita() {
 	kortti.otaRahaa(50);
-	assert.Equals(false, kortti.otaRahaa());
+	assertEquals(false, kortti.otaRahaa());
     }
 }
