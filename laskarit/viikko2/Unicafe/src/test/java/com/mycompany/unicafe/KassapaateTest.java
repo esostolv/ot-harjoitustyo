@@ -130,6 +130,45 @@ public class KassapaateTest {
     @Test
     public void kassassaOlevaRahamaaraEiMuutuJosKortillaMaukkaasti() {
         paate.syoMaukkaasti(rikas);
-        assertEquals(100000, paate.kassassaRahaa);     
+        assertEquals(100000, paate.kassassaRahaa());     
+    }
+    
+    @Test
+    public void syoEdullisestiKortillaOttaaRahat() {
+        paate.syoEdullisesti(rikas);
+        assertEquals(260, rikas.saldo());      
+    }
+    
+    @Test
+    public void syoEdullisestiKortillaPalauttaaTrue() {
+        assertTrue(paate.syoEdullisesti(rikas));      
+    }
+    
+    @Test
+    public void syoEdullisestiKortillaLisaaMaaraa() {
+        paate.syoEdullisesti(rikas);
+        assertEquals(1, paate.edullisiaLounaitaMyyty());     
+    }
+    
+    @Test
+    public void syoEdullisestiKortillaEiOtaRahojaJosKoyha() {
+        paate.syoEdullisesti(koyha);
+        assertEquals(20, koyha.saldo());      
+    }
+    
+    @Test
+    public void syoEdullisestiKortillaPalauttaaFalseJosEiRahaa() {
+        assertFalse(paate.syoEdullisesti(koyha));      
+    }
+    
+    @Test
+    public void syoEdullisestiKortillaEiLisaaMaaraaJosEiRahaa() {
+        paate.syoEdullisesti(koyha);
+        assertEquals(0, paate.edullisiaLounaitaMyyty());     
+    }
+    @Test
+    public void kassassaOlevaRahamaaraEiMuutuJosKortillaMaukkaasti() {
+        paate.syoEdullisesti(rikas);
+        assertEquals(100000, paate.kassassaRahaa());     
     }
 }
