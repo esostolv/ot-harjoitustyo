@@ -1,4 +1,4 @@
-(package com.mycompany.unicafe;
+package com.mycompany.unicafe;
 
 import static org.junit.Assert.*;
 import org.junit.Before;
