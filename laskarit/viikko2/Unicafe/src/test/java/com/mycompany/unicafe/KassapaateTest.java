@@ -183,7 +183,11 @@ public class KassapaateTest {
     }
     @Test
     public void kassaanLisaaRahaaMiinus() {
+<<<<<<< HEAD
         paate.lataaRahaaKortille(rikas, -5);
+=======
+        paate.lataaRahaaKortille(rikas, -1);
+>>>>>>> dc469dfffd954a7621f87c14eaff76434d79196d
         assertEquals(100000, paate.kassassaRahaa());     
     }
 }
