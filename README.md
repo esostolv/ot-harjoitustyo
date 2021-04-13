@@ -12,7 +12,7 @@
 [Monopoli 1](https://github.com/esostolv/ot-harjoitustyo/blob/master/laskarit/viikko3/Monopoli%201.jpg) <br>
 [Monopoli 2](https://github.com/esostolv/ot-harjoitustyo/blob/master/laskarit/viikko3/Monopoli%202.jpg) <br>
 [Machine](https://github.com/esostolv/ot-harjoitustyo/blob/master/laskarit/viikko3/Machine.jpg) <br>
-[HSL](https://github.com/esostolv/ot-harjoitustyo/blob/master/laskarit/viikko3/HSL.jpg) <br)
+[HSL](https://github.com/esostolv/ot-harjoitustyo/blob/master/laskarit/viikko3/HSL.jpg) <br>
 
 ## Harjoitustyö 
 [Vaativuusmäärittely](https://github.com/esostolv/ot-harjoitustyo/blob/master/dokumentaatio/vaativuusmaarittely.md) <br>
