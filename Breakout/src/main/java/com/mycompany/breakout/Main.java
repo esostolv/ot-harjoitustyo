@@ -11,6 +11,7 @@ package com.mycompany.breakout;
  */
 public class Main {
     public static void main(String[] args) {
+        Breakout b = new Breakout();
         
     }
 }

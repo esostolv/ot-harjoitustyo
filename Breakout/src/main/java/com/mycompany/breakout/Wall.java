@@ -4,11 +4,29 @@
  * and open the template in the editor.
  */
 package com.mycompany.breakout;
+import javafx.scene.shape.Rectangle;
 
 /**
  *
  * @author Oskari
  */
 public class Wall {
+    private boolean broken;
+    private Rectangle wall;
     
+    public Wall(int x, int y) {
+        createWall(x, y);
+    }
+    
+    public void createWall(int x, int y) {
+        this.wall = new Rectangle();
+        wall.setX(x);
+        wall.setY(y);
+        wall.setHeight(20);
+        wall.setWidth(50);
+    }
+    
+    public Rectangle getWall() {
+        return wall;
+    }
 }

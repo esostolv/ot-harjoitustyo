@@ -10,5 +10,14 @@ package com.mycompany.breakout;
  * @author Oskari
  */
 public class Breakout {
+    public Breakout() {
+        startGame();
+    }
     
+    public void startGame() {
+        Screen s = new Screen();
+        s.launch();
+        
+        
+    }
 }
