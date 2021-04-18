@@ -7,5 +7,5 @@
 | 10.4.   | 2 | JavaFX:n testailua | 
 | 13.4.   | 2 | Ohjelman rungon pohtimista ja työstöä |
 | 18.4.   | 2 | JavaFX:n ja Mavenin kanssa säätämistä, jotta saadaan JavaFX toimimaan |
-| 19.4.   | 4 | Ohjelman koodin kirjoittelua ja ensimmäisten testien luominen | 
-| **Yhteensä**	| 16 	| 	|
+| 19.4.   | 5 | Ohjelman koodin kirjoittelua ja ensimmäisten testien luominen, Checkstylen käyttöönotto | 
+| **Yhteensä**	| 17 	| 	|
