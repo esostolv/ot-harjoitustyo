@@ -1,4 +1,5 @@
-# OT-harjoitustyön tehtävät 
+# Breakout
+Breakout on peli, jossa pelaaja pyrkii hajottamaan tiiliseinää pallon avulla. Palloa ohjaillaan oikeaan suuntaan liikuttelemalla ruudun alareunassa olevaa alustaa.  
 ## Viikko 1 
 [gitlog.txt](https://github.com/esostolv/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt) <br>
 [komentorivi.txt](https://github.com/esostolv/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt) <br>
@@ -14,6 +15,6 @@
 [Machine](https://github.com/esostolv/ot-harjoitustyo/blob/master/laskarit/viikko3/Machine.jpg) <br>
 [HSL](https://github.com/esostolv/ot-harjoitustyo/blob/master/laskarit/viikko3/HSL.jpg) <br>
 
-## Harjoitustyö 
+## Dokumentaatio 
 [Vaativuusmäärittely](https://github.com/esostolv/ot-harjoitustyo/blob/master/dokumentaatio/vaativuusmaarittely.md) <br>
 [Työaikakirjanpito](https://github.com/esostolv/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md) <br>
