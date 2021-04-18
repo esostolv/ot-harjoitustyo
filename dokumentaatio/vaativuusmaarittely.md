@@ -5,8 +5,8 @@ Sovellus on Breakout-peli, jossa pelaaja tuhoaa ruudun yläosassa olevia laatiko
 Sovelluksella on vain yhdenlaisia käyttäjiä. Käyttäjä voi pelata peliä. Pelin päätyttyä käyttäjä voi halutessaan antaa nimensä, jolloin pistemäärä tallettuu tietokantaan. Käyttäjä voi myös tarkastella aiempia pelituloksia tietokannasta.
 ## Toiminnallisuudet <h2>
 - käyttäjä voi aloittaa uuden pelin ja pelata pelin
-    - Peli luo pelialueen [tehty]
-    - Peli luo alustan, pallon ja seinän [tehty]
+    - Peli luo pelialueen [**tehty**]
+    - Peli luo alustan, pallon ja seinän [**tehty**]
     - Pallo lähtee liikkeelle, kun painaa nuolinäppäimiä
     - Alusta liikkuu sivuille nuolinäppäimillä
     - Pallo liikkuu ylös, kunnes törmää seinään / tiileen
