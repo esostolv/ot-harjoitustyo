@@ -1,5 +1,5 @@
 
-package fi.esostolv.logics;
+package fi.breakout.logics;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -21,7 +21,7 @@ public class Screen extends Application {
         board.getChildren().add(p.getPad());
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 3; j++) {
-                board.getChildren().add(new Wall(i * 50, j * 20).getWall());
+                board.getChildren().add(new Wall(i * 50, j * 20, 20, 50).getWall());
             }
         }
         Scene scene = new Scene(board);

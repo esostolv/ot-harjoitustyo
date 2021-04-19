@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fi.esostolv.logics;
+package fi.breakout.logics;
 
 import javafx.scene.shape.Circle;
+import javafx.scene.paint.Color;
 
 /**
  *
@@ -22,9 +23,14 @@ public class Ball {
         ball.setCenterX(300.0);
         ball.setCenterY(392.5);
         ball.setRadius(5.0);
+        ball.setFill(Color.GREEN);
     }
     
     public Circle getBall() {
         return ball;
+    }
+    
+    public int getRadius() {
+        return 5;
     }
 }

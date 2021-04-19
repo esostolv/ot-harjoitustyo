@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fi.esostolv.logics;
+package fi.breakout.logics;
 
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 /**
@@ -23,9 +24,14 @@ public class Pad {
         pad.setY(395);
         pad.setHeight(10);
         pad.setWidth(50);
+        pad.setFill(Color.GREEN);
     }
     
     public Rectangle getPad() {
         return pad;
+    }
+    
+    public int getSize() {
+        return 50;
     }
 }
