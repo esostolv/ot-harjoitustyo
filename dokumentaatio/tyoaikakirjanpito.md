@@ -9,4 +9,5 @@
 | 18.4.   | 2 | JavaFX:n ja Mavenin kanssa säätämistä, jotta saadaan JavaFX toimimaan |
 | 19.4.   | 5 | Ohjelman koodin kirjoittelua, Checkstylen käyttöönotto | 
 | 20.4.   | 2 | Ensimmäisten testien luominen, ohjelman toimivuuden tarkistus etätyöpöydällä |
-| **Yhteensä**	| 19 	| 	|
+| 24.4.   | 3 | Ohjelman koodin laajentamista |
+| **Yhteensä**	| 22 	| 	|
