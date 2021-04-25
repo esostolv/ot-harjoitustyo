@@ -10,4 +10,5 @@
 | 19.4.   | 5 | Ohjelman koodin kirjoittelua, Checkstylen käyttöönotto | 
 | 20.4.   | 2 | Ensimmäisten testien luominen, ohjelman toimivuuden tarkistus etätyöpöydällä |
 | 24.4.   | 3 | Ohjelman koodin laajentamista |
-| **Yhteensä**	| 22 	| 	|
+| 25.4.   | 3 | Sekvenssikaavion laadinta, ohelman koodin laajentamista, JAR-tiedoston luomista ja ongelmanratkaisua |
+| **Yhteensä**	| 25 	| 	|
