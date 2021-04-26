@@ -32,20 +32,40 @@ public class Ui extends Application {
         Label title = new Label("BREAKOUT");
         Button newGame = new Button("Uusi peli");
         Button stats = new Button("Tilastot");
+        Button instructions = new Button("Ohjeet");
         
         GridPane menu = new GridPane();
         
         menu.add(title, 0, 0);
         menu.add(newGame, 0, 1);
         menu.add(stats, 0, 2);
+        menu.add(instructions, 0, 3);
         
         menu.setPrefSize(600, 400);
         menu.setAlignment(Pos.CENTER);
-        
+        newGame.setOnAction((event) -> window.setScene(play()));
         Scene scene = new Scene(menu);
         window.setTitle("BREAKOUT");
         window.setScene(scene);
         window.show();
+    }
+    
+    
+    public Scene play() {
+        Pane board = new Pane();
+        board.setPrefSize(600, 400);
+        
+        Ball b = new Ball();
+        board.getChildren().add(b.getBall());
+        Pad p = new Pad();
+        board.getChildren().add(p.getPad());
+        for (int i = 0; i < 12; i++) {
+            for (int j = 0; j < 3; j++) {
+                board.getChildren().add(new Wall(i * 50, j * 20, 20, 50).getWall());
+            }
+        }
+        Scene game = new Scene(board);
+        return game;
     }
     
     public void launch() {
