@@ -11,4 +11,5 @@
 | 20.4.   | 2 | Ensimmäisten testien luominen, ohjelman toimivuuden tarkistus etätyöpöydällä |
 | 24.4.   | 3 | Ohjelman koodin laajentamista |
 | 25.4.   | 3 | Sekvenssikaavion laadinta, ohelman koodin laajentamista, JAR-tiedoston luomista ja ongelmanratkaisua |
-| **Yhteensä**	| 25 	| 	|
+| 26.4.   | 4 | Valikon luominen, sovelluslogiikan ja käyttöliittymän eriyttämisen ihmettelyä | 
+| **Yhteensä**	| 29 	| 	|
