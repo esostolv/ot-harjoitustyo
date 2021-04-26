@@ -26,8 +26,6 @@ import javafx.stage.Stage;
 public class Ui extends Application {
     @Override
     public void start(Stage window) throws Exception {
-        Pane board = new Pane();
-        board.setPrefSize(600, 400);
         BorderPane layout = new BorderPane();
         Label title = new Label("BREAKOUT");
         Button newGame = new Button("Uusi peli");
