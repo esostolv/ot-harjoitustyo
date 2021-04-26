@@ -13,7 +13,8 @@ import fi.breakout.logics.Breakout;
  */
 public class Main {
     public static void main(String[] args) {
-        Breakout b = new Breakout();
-        
+        //Breakout b = new Breakout();
+        Ui u = new Ui();
+        u.launch();
     }
 }

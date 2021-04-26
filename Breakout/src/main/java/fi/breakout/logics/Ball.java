@@ -20,8 +20,8 @@ public class Ball {
     
     public void createBall() {
         this.ball = new Circle();
-        ball.setCenterX(300.0);
-        ball.setCenterY(392.5);
+        ball.setTranslateX(300.0);
+        ball.setTranslateY(392.5);
         ball.setRadius(5.0);
         ball.setFill(Color.GREEN);
     }
