@@ -26,25 +26,10 @@ import javafx.stage.Stage;
 public class Ui extends Application {
     @Override
     public void start(Stage window) throws Exception {
-        BorderPane layout = new BorderPane();
-        Label title = new Label("BREAKOUT");
-        Button newGame = new Button("Uusi peli");
-        Button stats = new Button("Tilastot");
-        Button instructions = new Button("Ohjeet");
-        
-        GridPane menu = new GridPane();
-        
-        menu.add(title, 0, 0);
-        menu.add(newGame, 0, 1);
-        menu.add(stats, 0, 2);
-        menu.add(instructions, 0, 3);
-        
-        menu.setPrefSize(600, 400);
-        menu.setAlignment(Pos.CENTER);
-        newGame.setOnAction((event) -> window.setScene(play()));
-        Scene scene = new Scene(menu);
+        //GridPane layout = new GridPane();
+        Scene menu = menu(window);
         window.setTitle("BREAKOUT");
-        window.setScene(scene);
+        window.setScene(menu);
         window.show();
     }
     
@@ -65,6 +50,27 @@ public class Ui extends Application {
         Scene game = new Scene(board);
         return game;
     }
+    
+    public Scene menu(Stage window) {
+        Label title = new Label("BREAKOUT");
+        Button newGame = new Button("Uusi peli");
+        Button stats = new Button("Tilastot");
+        Button instructions = new Button("Ohjeet");
+        
+        GridPane menu = new GridPane();
+        
+        menu.add(title, 0, 0);
+        menu.add(newGame, 0, 1);
+        menu.add(stats, 0, 2);
+        menu.add(instructions, 0, 3);
+        menu.setPrefSize(600, 400);
+        menu.setAlignment(Pos.CENTER);
+        newGame.setOnAction((event) -> window.setScene(play()));
+        Scene scene = new Scene(menu);
+        return scene;
+    }
+    
+
     
     public void launch() {
         launch(Ui.class);

@@ -15,8 +15,7 @@ public class Breakout {
     }
     
     public void startGame() {
-        Screen s = new Screen();
-        s.launch();
+        
         
         
     }
