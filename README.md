@@ -10,7 +10,9 @@ Breakout on peli, jossa pelaaja pyrkii hajottamaan tiiliseinää pallon avulla. 
 ### Testaus
 Testit suoritetaan komentorivillä komennolla "mvn test" <br>
 Testauskattavuusraportti luodaan komentorivillä komennolla "mvn jacoco:report" <br> 
+Testikattavuusraportti löytyy tiedostona nimellä index hakemistosta target/site/jacoco <br>
 ### Suoritettavan jarin generointi
 Jar-tiedosto voidaan generoida komentorivillä komennolla "mvn package" <br>
 ### Checkstyle-tarkastus
-Checkstyle-tarkastukset suoritetaan komentorivillä komennolla "mvn jxr:jxr checkstyle:checkstyle"
+Checkstyle-tarkastukset suoritetaan komentorivillä komennolla "mvn jxr:jxr checkstyle:checkstyle" <br>
+Checkstyle-raportti löytyy tiedostona nimellä checkstyle hakemistosta target/site <br>
