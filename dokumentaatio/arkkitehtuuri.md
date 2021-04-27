@@ -4,6 +4,6 @@ Ohjelman luokkakaavio:
 
 # Sekvenssikaavio
 Pelin alustuksen toiminnallisuutta kuvataan sekvenssikaavion avulla. Sekvenssikaaviossa on kuvattu ohjelmassa pelialustan luominen ja pallo-olion luominen peliin. 
-![Sekvenssikaavio](https://user-images.githubusercontent.com/73749539/116004616-3b524d80-a60c-11eb-88e5-197d77179793.png)
+![Sekvenssikaavio2](https://user-images.githubusercontent.com/73749539/116285659-06263680-a797-11eb-80bc-7f61f30ffd8f.png)
 
 
