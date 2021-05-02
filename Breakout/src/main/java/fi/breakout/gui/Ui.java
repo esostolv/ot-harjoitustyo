@@ -20,20 +20,30 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
- *
- * @author Oskari
+ * Luokka luo graafisen käyttöliittymän, jossa on valikko, josta käyttäjä voi
+ * valita, mitä tekee, ja pelata peliä. 
  */
 public class Ui extends Application {
+    
+    /**
+     * Metodi luo uuden valikon ja asettaa sen window-stageen. 
+     * @param window
+     * @throws Exception 
+     */
     @Override
     public void start(Stage window) throws Exception {
-        //GridPane layout = new GridPane();
         Scene menu = menu(window);
         window.setTitle("BREAKOUT");
         window.setScene(menu);
         window.show();
     }
     
-    
+    /**
+     * Metodi luo uuden olion peliä varten ja alustaa pelin: luo pallon, alustan ja 
+     * tiilet. 
+     * 
+     * @return scene, jossa käyttäjä voi pelata peliä.
+     */
     public Scene play() {
         Pane board = new Pane();
         board.setPrefSize(600, 400);
@@ -50,7 +60,13 @@ public class Ui extends Application {
         Scene game = new Scene(board);
         return game;
     }
-    
+    /**
+     * Metodi alustaa uuden valikon pelin etusivulle. Valikosta käyttäjä pääsee aloittamaan
+     * uuden pelin, tarkastelemaan aiempia tuloksia, lukemaan ohjeet ja sulkemaan sovelluksen.
+     * 
+     * @param window  Luo uuden Stge-olion. 
+     * @return 
+     */
     public Scene menu(Stage window) {
         Label title = new Label("BREAKOUT");
         Button newGame = new Button("Uusi peli");

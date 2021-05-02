@@ -6,6 +6,7 @@ package Tests;
  * and open the template in the editor.
  */
 
+import fi.breakout.gui.Ui;
 import fi.breakout.logics.Ball;
 import fi.breakout.logics.Breakout;
 import fi.breakout.logics.Pad;
@@ -49,5 +50,7 @@ public class BreakoutTest {
         Ball ball = new Ball();
         assertEquals(ball.getRadius(), 5);
     }
+    
+  
 
 }
