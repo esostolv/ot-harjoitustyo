@@ -1,6 +1,7 @@
 # Breakout
 Breakout on peli, jossa pelaaja pyrkii hajottamaan tiiliseinää pallon avulla. Palloa ohjaillaan oikeaan suuntaan liikuttelemalla ruudun alareunassa olevaa alustaa.  
 ## Dokumentaatio 
+[Käyttöohje](https://github.com/esostolv/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje)<br>
 [Vaativuusmäärittely](https://github.com/esostolv/ot-harjoitustyo/blob/master/dokumentaatio/vaativuusmaarittely.md) <br>
 [Arkkitehtuurikuvaus](https://github.com/esostolv/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md) <br>
 [Työaikakirjanpito](https://github.com/esostolv/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md) <br>
@@ -16,3 +17,5 @@ Jar-tiedosto voidaan generoida komentorivillä komennolla "mvn package" <br>
 ### Checkstyle-tarkastus
 Checkstyle-tarkastukset suoritetaan komentorivillä komennolla "mvn jxr:jxr checkstyle:checkstyle" <br>
 Checkstyle-raportti löytyy tiedostona nimellä checkstyle hakemistosta target/site <br>
+### Javadocin generointi
+Javadoc-raportti voidaan generoida komentorivillä komennolla "mvn javadoc:javadoc" <br>
