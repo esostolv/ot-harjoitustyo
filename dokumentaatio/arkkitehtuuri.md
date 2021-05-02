@@ -3,7 +3,9 @@
 Ohjelman rakenteessa sovelluslogiikka on erotettu omaan pakkaukseensa *logic*, ja JavaFX:llä toteutettu käyttöliittymä omaan pakkaukseensa *gui*.
 
 # Käyttöliittymä
-Käyttöliittymässä on 
+Käyttöliittymä on toteutettu JavaFX:llä. Siinä on neljä erilaista näkymää *scene*-olioina: päävalikko, pelitila, pelitulosten tarkastelu sekä pelin ohjeet. Näkymistä yksi kerrallaan on sijoitettuna näkyviin stage-olioon. <br>
+<br> Luokka *main* on sovelluksen pääluokka, josta käynnistetään varsinainen käyttöliittymä luokassa *ui*. *Main*-luokka on olemassa, jotta generoitavan -jar-tiedoston pääluokka ei perisi JavaFX:n luokkaa *Application*. <br>
+<br> Luokassa *ui* tapahtuu käyttöliittymän luonti. Jokainen käyttöliittymän neljästä näkymästä luodaan omassa metodissaan. 
 # Sovelluslogiikka
 Ohjelman luokkakaavio:
 ![Luokkakaavio](https://user-images.githubusercontent.com/73749539/115287940-84605880-a159-11eb-9321-f628d73d1918.png)
