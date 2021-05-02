@@ -13,4 +13,6 @@
 | 25.4.   | 3 | Sekvenssikaavion laadinta, ohelman koodin laajentamista, JAR-tiedoston luomista ja ongelmanratkaisua |
 | 26.4.   | 5 | Valikon luominen, sovelluslogiikan ja käyttöliittymän eriyttämisen ihmettelyä, Jacocon asetusten korjailua | 
 | 27.4.   | 3 | Sovelluksen kokeilu etätyöpöydällä, JAR-tiedoston kokeilua, Releasen luonti, ohjelman koodin siistimistä | 
-| **Yhteensä**	| 33 	| 	|
+| 1.5.    | 3 | JavaFX:n ja tapahtumakäsittelijän rakentelua |
+| 2.5.    | 4 | Tapahtumakäsittelijän jatkotyöstöä, dokumentaatiota|
+| **Yhteensä**	| 40 	| 	|
