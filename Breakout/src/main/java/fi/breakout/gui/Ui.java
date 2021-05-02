@@ -56,16 +56,18 @@ public class Ui extends Application {
         Button newGame = new Button("Uusi peli");
         Button stats = new Button("Tilastot");
         Button instructions = new Button("Ohjeet");
-        
+        Button stop = new Button("Lopeta");
         GridPane menu = new GridPane();
         
         menu.add(title, 0, 0);
         menu.add(newGame, 0, 1);
         menu.add(stats, 0, 2);
         menu.add(instructions, 0, 3);
+        menu.add(stop, 0, 4);
         menu.setPrefSize(600, 400);
         menu.setAlignment(Pos.CENTER);
         newGame.setOnAction((event) -> window.setScene(play()));
+        stop.setOnAction((event) -> System.exit(0));
         Scene scene = new Scene(menu);
         return scene;
     }

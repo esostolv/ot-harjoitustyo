@@ -39,6 +39,9 @@ public class Pad {
     }
     
     public void move() {
-        this.pad.setTranslateX(this.pad.getTranslateX() + this.moving.getX());
+        this.pad.setTranslateX(this.pad.getTranslateX());
     }
+    
+    
 }
+    
