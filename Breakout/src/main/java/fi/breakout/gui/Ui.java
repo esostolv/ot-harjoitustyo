@@ -6,6 +6,7 @@
 package fi.breakout.gui;
 
 import fi.breakout.logics.Ball;
+import fi.breakout.logics.Breakout;
 import fi.breakout.logics.Pad;
 import fi.breakout.logics.Wall;
 import javafx.geometry.Pos;
@@ -13,6 +14,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -48,16 +50,18 @@ public class Ui extends Application {
         Pane board = new Pane();
         board.setPrefSize(600, 400);
         
-        Ball b = new Ball();
-        board.getChildren().add(b.getBall());
-        Pad p = new Pad();
-        board.getChildren().add(p.getPad());
+        Ball ball = new Ball();
+        board.getChildren().add(ball.getBall());
+        Pad pad = new Pad();
+        board.getChildren().add(pad.getPad());
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 3; j++) {
                 board.getChildren().add(new Wall(i * 50, j * 20, 20, 50).getWall());
             }
         }
+        Breakout breakout = new Breakout(ball, pad);
         Scene game = new Scene(board);
+
         return game;
     }
     /**

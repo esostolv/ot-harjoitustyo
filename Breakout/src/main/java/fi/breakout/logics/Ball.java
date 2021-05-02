@@ -1,15 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package fi.breakout.logics;
 
 import javafx.scene.shape.Circle;
 import javafx.scene.paint.Color;
 
 /**
- *
+ * Tämä metodi luo pallon ja asettaa sen sijainnin. 
  * @author Oskari
  */
 public class Ball {
@@ -20,10 +16,14 @@ public class Ball {
     
     public void createBall() {
         this.ball = new Circle();
-        ball.setTranslateX(300.0);
-        ball.setTranslateY(392.5);
+        ball.setCenterX(300.0);
+        ball.setCenterY(385);
         ball.setRadius(5.0);
         ball.setFill(Color.GREEN);
+    }
+    
+    public double getY() {
+        return ball.getCenterY();
     }
     
     public Circle getBall() {

@@ -10,13 +10,29 @@ package fi.breakout.logics;
  * @author Oskari
  */
 public class Breakout {
-    public Breakout() {
-        startGame();
+    private Ball ball;
+    private Pad pad;
+    
+    public Breakout(Ball ball, Pad Pad) {
+        this.ball = ball;
+        this.pad = pad;
     }
     
-    public void startGame() {
+    public void round() {
+        //ball.move();
+        //pad.move();
         
-        
-        
+    }
+    /**
+     * Tarkistaa, onko pallo pudonnut alustan alapuolelle.
+     * @return true, jos pallon keskipiste on alempana kuin alusta
+     *         false, jos pallon keskipiste on alustan tasolla tai korkeammalla. 
+     */
+    
+    public boolean fall() {
+        if ((ball.getY()) < 12.5) {
+            return true;
+        }
+        return false; 
     }
 }
