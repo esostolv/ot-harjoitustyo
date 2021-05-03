@@ -15,4 +15,5 @@
 | 27.4.   | 3 | Sovelluksen kokeilu etätyöpöydällä, JAR-tiedoston kokeilua, Releasen luonti, ohjelman koodin siistimistä | 
 | 1.5.    | 3 | JavaFX:n ja tapahtumakäsittelijän rakentelua |
 | 2.5.    | 4 | Tapahtumakäsittelijän jatkotyöstöä, dokumentaatiota|
-| **Yhteensä**	| 40 	| 	|
+| 3.5.    | 2 | Tapahtumakäsittelijän kehittelyä, alustan liikkeen siistimistä |
+| **Yhteensä**	| 42 	| 	|
