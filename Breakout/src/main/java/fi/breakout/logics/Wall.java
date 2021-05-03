@@ -11,19 +11,19 @@ import javafx.scene.paint.Color;
  * @author Oskari
  */
 public class Wall {
-    private boolean broken;
+    private boolean[] listOfBricks;
     private Rectangle wall;
     private int height;
     private int width;
 
     
     public Wall(int x, int y, int h, int w) {
-        createWall(x, y, h, w);
+        createBrick(x, y, h, w);
         this.height = h;
         this.width = w;
     }
     
-    public void createWall(int x, int y, int h, int w) {
+    public void createBrick(int x, int y, int h, int w) {
         this.wall = new Rectangle();
         wall.setX(x);
         wall.setY(y);
@@ -32,6 +32,8 @@ public class Wall {
         wall.setFill(Color.BLUE);
         wall.setStroke(Color.WHITE);
     }
+    
+  
     
     public Rectangle getWall() {
         return wall;

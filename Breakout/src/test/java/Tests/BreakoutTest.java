@@ -57,5 +57,35 @@ public class BreakoutTest {
         assertEquals(385, ball.getY(), 0.1);
     }
   
-
+    @Test
+    public void padMovesToLeft() {
+        Pad pad = new Pad();
+        pad.move(-1);
+        assertEquals(-4, pad.getX(), 0.1);
+    }
+    
+    @Test
+    public void padMovesToRight() {
+        Pad pad = new Pad();
+        pad.move(1);
+        assertEquals(4, pad.getX(), 0.1);
+    }
+    
+    @Test
+    public void padDoesntGoOutsideLeft() {
+        Pad pad = new Pad();
+        for (int i = 0; i < 70; i++) {
+            pad.move(-1);
+        }
+        assertEquals(-270, pad.getX(), 0.1);
+    }
+    
+    @Test
+    public void padDoesntGoOutsideRight() {
+        Pad pad = new Pad();
+        for (int i = 0; i < 70; i++) {
+            pad.move(1);
+        }
+        assertEquals(270, pad.getX(), 0.1);
+    }
 }

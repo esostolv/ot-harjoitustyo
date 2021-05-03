@@ -22,54 +22,36 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
- * Luokka luo graafisen käyttöliittymän, jossa on valikko, josta käyttäjä voi
- * valita, mitä tekee, ja pelata peliä. 
+ * The class creates a graphical ui with a menu and different scenes.  
  */
 public class Ui extends Application {
-    
+    private Breakout breakout;
     /**
-     * Metodi luo uuden valikon ja asettaa sen window-stageen. 
+     * The method creates a new menu and sets stage "window" 
      * @param window
      * @throws Exception 
      */
+
     @Override
     public void start(Stage window) throws Exception {
         Scene menu = menu(window);
+        this.breakout = new Breakout();
         window.setTitle("BREAKOUT");
         window.setScene(menu);
         window.show();
     }
     
     /**
-     * Metodi luo uuden olion peliä varten ja alustaa pelin: luo pallon, alustan ja 
-     * tiilet. 
+     * The method creates a new scene, in which the game can be played. 
      * 
-     * @return scene, jossa käyttäjä voi pelata peliä.
+     * @return a scene in which the game is played
      */
-    public Scene play() {
-        Pane board = new Pane();
-        board.setPrefSize(600, 400);
-        
-        Ball ball = new Ball();
-        board.getChildren().add(ball.getBall());
-        Pad pad = new Pad();
-        board.getChildren().add(pad.getPad());
-        for (int i = 0; i < 12; i++) {
-            for (int j = 0; j < 3; j++) {
-                board.getChildren().add(new Wall(i * 50, j * 20, 20, 50).getWall());
-            }
-        }
-        Breakout breakout = new Breakout(ball, pad);
-        Scene game = new Scene(board);
-
-        return game;
-    }
+   
     /**
-     * Metodi alustaa uuden valikon pelin etusivulle. Valikosta käyttäjä pääsee aloittamaan
-     * uuden pelin, tarkastelemaan aiempia tuloksia, lukemaan ohjeet ja sulkemaan sovelluksen.
+     * The method creates a new menu on the first scene of the application. 
      * 
-     * @param window  Luo uuden Stge-olion. 
-     * @return 
+     * @param window  Creates a new stage.  
+     * @return a new menu
      */
     public Scene menu(Stage window) {
         Label title = new Label("BREAKOUT");
@@ -86,12 +68,13 @@ public class Ui extends Application {
         menu.add(stop, 0, 4);
         menu.setPrefSize(600, 400);
         menu.setAlignment(Pos.CENTER);
-        newGame.setOnAction((event) -> window.setScene(play()));
+        newGame.setOnAction((event) -> window.setScene(breakout.play()));
         stop.setOnAction((event) -> System.exit(0));
         Scene scene = new Scene(menu);
         return scene;
     }
     
+
 
     
     public void launch() {

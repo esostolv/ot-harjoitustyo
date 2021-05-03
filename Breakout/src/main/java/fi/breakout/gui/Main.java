@@ -8,7 +8,7 @@ package fi.breakout.gui;
 import fi.breakout.logics.Breakout;
 
 /**
- * Luokka käynnistää sovelluksen ja luo uuden käyttöliittymän. 
+ * The class starts the application and opens a new ui.  
  * @author Oskari
  */
 public class Main {

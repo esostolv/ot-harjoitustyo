@@ -5,12 +5,14 @@
  */
 package fi.breakout.logics;
 
+import javafx.animation.TranslateTransition;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.geometry.Point2D;
 import javafx.scene.input.KeyEvent;
+import javafx.util.Duration;
 /**
- *
+ * The class creates a new pad and sets its location.
  * @author Oskari
  */
 public class Pad {
@@ -20,7 +22,10 @@ public class Pad {
     public Pad() {
         createPad();
     }
-    
+    /**
+     * The method creates a new pad: creates a rectangle, sets its size and location and
+     * sets its colour to green. 
+     */
     public void createPad() {
         this.pad = new Rectangle();
         pad.setX(270);
@@ -28,28 +33,41 @@ public class Pad {
         pad.setHeight(10);
         pad.setWidth(60);
         pad.setFill(Color.GREEN);
-        this.moving = new Point2D(0, 0);
     }
    
+    /**
+     * The method returns the pad object.
+     * @return 
+     */
     public Rectangle getPad() {
         return pad;
     }
     
+    public double getX() {
+        return pad.getTranslateX();
+    }
+    
+    /**
+     * The method returns the width of the pad.
+     * @return 
+     */
     public double getSize() {
         return pad.getWidth();
     }
     
-    public void move() {
-        if (pad.getX() <= 25) {
-            pad.setX(25);
+    /**
+     * The method moves pad horizontally.
+     * @param direction determines the direction of pad (+1 direction right, -1 direction left)
+     * 
+     */
+    public void move(int direction) {
+        pad.setTranslateX(pad.getTranslateX() + direction * 4);
+        if (pad.getTranslateX() < -270) {
+            pad.setTranslateX(-270);
+        } 
+        if (pad.getTranslateX() > 270) {
+            pad.setTranslateX(270);
         }
-        if (pad.getX() >= 575) {
-            pad.setX(375);
-        }
-        
     }
-    
-    
-    
 }
     
