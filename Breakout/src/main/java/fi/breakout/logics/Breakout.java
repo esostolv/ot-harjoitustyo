@@ -14,7 +14,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 
 /**
- *
+ * Pelin mekaniikkaa ja tapahtumia kuvaava luokka
  * @author Oskari
  */
 public class Breakout {
@@ -23,50 +23,25 @@ public class Breakout {
     private Timeline timeline;
     private boolean[][] wall;
     
+    /**
+     * Metodi alustaa uuden pelin ja luo pallon ja alustan.
+     */
     public Breakout() {
         this.ball = new Ball();
         this.pad = new Pad();
     }
-    public Scene play() {
-        Pane board = new Pane();
-        board.setPrefSize(600, 400);
-        
-        //Ball ball = new Ball();
-        board.getChildren().add(ball.getBall());
-        //Pad pad = new Pad();
-        board.getChildren().add(pad.getPad());
-        for (int i = 0; i < 12; i++) {
-            for (int j = 0; j < 3; j++) {
-                board.getChildren().add(new Wall(i * 50, j * 20, 20, 50).getWall());
-            }
-        }
-        
-        Scene game = new Scene(board);
-        Map<KeyCode, Boolean> pressedButtons = new HashMap<>();
-        game.setOnKeyPressed(event -> {
-            pressedButtons.put(event.getCode(), Boolean.TRUE);
-        });
-        game.setOnKeyReleased(event-> {
-            pressedButtons.put(event.getCode(), Boolean.FALSE);
-        });
-        new AnimationTimer() {
-            @Override
-            public void handle(long now) {
-                if (pressedButtons.getOrDefault(KeyCode.LEFT, false)) {
-                    pad.move(-1);
-                }
-                if (pressedButtons.getOrDefault(KeyCode.RIGHT, false)) {
-                    pad.move(1);
-                }
-                ball.move(1, -1);
-                System.out.println(ball.getY());
-                if (fall() == true) {
-                }
-            }
-        }.start();
-        return game;
+    
+    public Ball getBall() {
+        return this.ball;
     }
     
+    public Pad getPad() {
+        return this.pad;
+    }
+    
+    /**
+     * Metodi luo uuden 12*3-kokoisen seinän ja luo listan seinän tiilten tilasta.
+     */
     public void createWall() {
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 3; j++) {
@@ -75,6 +50,11 @@ public class Breakout {
         }
     }
     
+    /**
+     * Metodi muuttaa tiilten kirjanpidossa valitun tiilen hajotetuksi.
+     * @param i tiilen x-koordinaatti
+     * @param j tiilen y-koordinaatti
+     */
     public void removeBrick(int i, int j) {
         this.wall[i][j] = false; 
     }
@@ -89,8 +69,18 @@ public class Breakout {
         if (ball.getY() > 5) {
             return true;
         } else {
-        return false;
+            return false;
         }
+    }
+    
+    /**
+     * Metodi palauttaa tiedon, onko kysytty tiili hajonnut. 
+     * @param i tiilen x-koordinaatti
+     * @param j tiilen y-koordinaatti
+     * @return 
+     */
+    public boolean getStatus(int i, int j) {
+        return wall[i][j];
     }
     
 }

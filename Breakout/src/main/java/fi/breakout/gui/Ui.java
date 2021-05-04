@@ -9,6 +9,9 @@ import fi.breakout.logics.Ball;
 import fi.breakout.logics.Breakout;
 import fi.breakout.logics.Pad;
 import fi.breakout.logics.Wall;
+import java.util.HashMap;
+import java.util.Map;
+import javafx.animation.AnimationTimer;
 import javafx.geometry.Pos;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -22,13 +25,13 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
- * The class creates a graphical ui with a menu and different scenes.  
+ * Käyttöliittymää kuvaava luokka  
  */
 public class Ui extends Application {
     private Breakout breakout;
     /**
-     * The method creates a new menu and sets stage "window" 
-     * @param window
+     * Metodi luo uuden käyttöliittymän ja avaa valikon.
+     * @param window luo uuden stagen
      * @throws Exception 
      */
 
@@ -42,16 +45,52 @@ public class Ui extends Application {
     }
     
     /**
-     * The method creates a new scene, in which the game can be played. 
+     * Metodi luo scenen, jossa peli pelataan. Metodi piirtää ruudulle pelin tapahtumat. 
      * 
-     * @return a scene in which the game is played
+     * @return game scene, jossa peli tapahtuu
      */
-   
+    public Scene play() {
+        Pane board = new Pane();
+        board.setPrefSize(600, 400);
+        Breakout breakout = new Breakout();
+        board.getChildren().add(breakout.getBall().getBall());
+        board.getChildren().add(breakout.getPad().getPad());
+        for (int i = 0; i < 12; i++) {
+            for (int j = 0; j < 3; j++) {
+                board.getChildren().add(new Wall(i * 50, j * 20, 20, 50).getWall());
+            }
+        }
+        
+        Scene game = new Scene(board);
+        Map<KeyCode, Boolean> pressedButtons = new HashMap<>();
+        game.setOnKeyPressed(event -> {
+            pressedButtons.put(event.getCode(), Boolean.TRUE);
+        });
+        game.setOnKeyReleased(event-> {
+            pressedButtons.put(event.getCode(), Boolean.FALSE);
+        });
+        new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+                if (pressedButtons.getOrDefault(KeyCode.LEFT, false)) {
+                    breakout.getPad().move(-1);
+                }
+                if (pressedButtons.getOrDefault(KeyCode.RIGHT, false)) {
+                    breakout.getPad().move(1);
+                }
+                breakout.getBall().move(1, -1);
+                if (breakout.fall() == true) {
+                    stop();
+                }
+            }
+        }.start();
+        return game;
+    }
     /**
-     * The method creates a new menu on the first scene of the application. 
+     * Metodi luo uuden valikon. 
      * 
-     * @param window  Creates a new stage.  
-     * @return a new menu
+     * @param window  luo uuden stagen. 
+     * @return scene  uusi valikko
      */
     public Scene menu(Stage window) {
         Label title = new Label("BREAKOUT");
@@ -68,14 +107,16 @@ public class Ui extends Application {
         menu.add(stop, 0, 4);
         menu.setPrefSize(600, 400);
         menu.setAlignment(Pos.CENTER);
-        newGame.setOnAction((event) -> window.setScene(breakout.play()));
+        newGame.setOnAction((event) -> window.setScene(play()));
         stop.setOnAction((event) -> System.exit(0));
         Scene scene = new Scene(menu);
         return scene;
     }
     
 
-
+    /**
+     * Metodi käynnistää käyttöliittymän
+     */
     
     public void launch() {
         launch(Ui.class);

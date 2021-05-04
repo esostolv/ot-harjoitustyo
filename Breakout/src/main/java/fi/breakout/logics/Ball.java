@@ -7,7 +7,7 @@ import javafx.animation.TranslateTransition;
 import javafx.util.Duration;
 
 /**
- * This class creates a ball and sets its location. 
+ * Palloa kuvaava luokka 
  * @author Oskari
  */
 public class Ball {
@@ -20,7 +20,7 @@ public class Ball {
     }
     
     /**
-     * The method creates a new ball and sets its center point and radius.
+     * Metodi luo uuden pallon ja alustaa sen sijainnin ja koon
      */
     public void createBall() {
         this.ball = new Circle();
@@ -33,29 +33,34 @@ public class Ball {
     }
     
     /**
-     * The metod returns the y-coordinate of the center of the ball.
-     * @return the y-coordinate of the center of the ball
+     * Metodi palauttaa pallon keskipisteen y-koordinaatin muutoken alkuperäiseen nähden.
+     * @return pallon y-koordinaatin muutos
      */
     public double getY() {
         return ball.getTranslateY();
     }
     
     /**
-     * The method returns the ball object.
-     * @return ball object 
+     * Metodi palauttaa pallon.
+     * @return ball pallo 
      */
     public Circle getBall() {
         return ball;
     }
     
     /**
-     * The method returns the radius of the ball.
-     * @return the radius of the ball.
+     * Metodi palauttaa pallon säteen
+     * @return pallon säde
      */
     public int getRadius() {
         return 5;
     }
     
+    /**
+     * Metodi liikuttaa palloa annettujen parametrien mukaiseen suuntaan
+     * @param dirX x-suunta
+     * @param dirY y-suunta
+     */
     public void move(int dirX, int dirY) {
         this.ball.setTranslateX(ball.getTranslateX() + dirX);
         this.ball.setTranslateY(ball.getTranslateY() + dirY);

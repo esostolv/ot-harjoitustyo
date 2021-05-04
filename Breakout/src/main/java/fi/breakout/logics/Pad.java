@@ -12,7 +12,7 @@ import javafx.geometry.Point2D;
 import javafx.scene.input.KeyEvent;
 import javafx.util.Duration;
 /**
- * The class creates a new pad and sets its location.
+ * Alustaa kuvaava luokka
  * @author Oskari
  */
 public class Pad {
@@ -23,8 +23,7 @@ public class Pad {
         createPad();
     }
     /**
-     * The method creates a new pad: creates a rectangle, sets its size and location and
-     * sets its colour to green. 
+     * Metodi luo uuden alustan ja asettaa sen sijainnin ja koon 
      */
     public void createPad() {
         this.pad = new Rectangle();
@@ -36,28 +35,31 @@ public class Pad {
     }
    
     /**
-     * The method returns the pad object.
-     * @return 
+     * Metodi palauttaa alustan.
+     * @return alusta
      */
     public Rectangle getPad() {
         return pad;
     }
-    
+    /**
+     * Metodi palauttaa alustan x-koordinaatin muutoksen alkuperäiseen nähden.
+     * @return x-koordinaatin muutos
+     */
     public double getX() {
         return pad.getTranslateX();
     }
     
     /**
-     * The method returns the width of the pad.
-     * @return 
+     * Metodi palauttaa alustan leveyden
+     * @return alustan leveys
      */
     public double getSize() {
         return pad.getWidth();
     }
     
     /**
-     * The method moves pad horizontally.
-     * @param direction determines the direction of pad (+1 direction right, -1 direction left)
+     * Metodi liikuttaa alustaa vaakatasossa ja estää sitä ajautumasta ruudun ulkopuolelle. 
+     * @param direction Määrittää alustan liikkeen suunnan
      * 
      */
     public void move(int direction) {

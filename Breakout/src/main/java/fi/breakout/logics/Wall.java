@@ -7,7 +7,7 @@ package fi.breakout.logics;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.paint.Color;
 /**
- *
+ * Tiiliä kuvaava luokka
  * @author Oskari
  */
 public class Wall {
@@ -16,13 +16,26 @@ public class Wall {
     private int height;
     private int width;
 
-    
+    /**
+     * Konstruktori luo uuden tiilen
+     * @param x tiilen x-koordinaatti
+     * @param y tiilen y-koordinaatti
+     * @param h tiilen korkeus
+     * @param w tiilen leveys
+     */
     public Wall(int x, int y, int h, int w) {
         createBrick(x, y, h, w);
         this.height = h;
         this.width = w;
     }
     
+    /**
+     * metodi luo uuden tiilen
+     * @param x tiilen x-koordinaatti
+     * @param y tiilen y-koordinaatti
+     * @param h tiilen korkeus
+     * @param w tiilen leveys
+     */
     public void createBrick(int x, int y, int h, int w) {
         this.wall = new Rectangle();
         wall.setX(x);
