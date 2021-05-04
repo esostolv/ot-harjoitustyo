@@ -54,7 +54,7 @@ public class BreakoutTest {
     @Test
     public void locationOfBallIsCorrect() {
         Ball ball = new Ball();
-        assertEquals(385, ball.getY(), 0.1);
+        assertEquals(0, ball.getY(), 0.1);
     }
   
     @Test

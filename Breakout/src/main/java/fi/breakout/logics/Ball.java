@@ -37,7 +37,7 @@ public class Ball {
      * @return the y-coordinate of the center of the ball
      */
     public double getY() {
-        return ball.getCenterY();
+        return ball.getTranslateY();
     }
     
     /**

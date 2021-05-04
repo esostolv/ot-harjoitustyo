@@ -21,18 +21,19 @@ public class Breakout {
     private Ball ball;
     private Pad pad;
     private Timeline timeline;
+    private boolean[][] wall;
     
     public Breakout() {
-        this.ball = ball;
-        this.pad = pad;
+        this.ball = new Ball();
+        this.pad = new Pad();
     }
     public Scene play() {
         Pane board = new Pane();
         board.setPrefSize(600, 400);
         
-        Ball ball = new Ball();
+        //Ball ball = new Ball();
         board.getChildren().add(ball.getBall());
-        Pad pad = new Pad();
+        //Pad pad = new Pad();
         board.getChildren().add(pad.getPad());
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 3; j++) {
@@ -58,17 +59,26 @@ public class Breakout {
                     pad.move(1);
                 }
                 ball.move(1, -1);
+                System.out.println(ball.getY());
+                if (fall() == true) {
+                }
             }
         }.start();
         return game;
-        
     }
     
-    public void round() {
-        //ball.move();
-        //pad.move();
-        
+    public void createWall() {
+        for (int i = 0; i < 12; i++) {
+            for (int j = 0; j < 3; j++) {
+                this.wall[i][j] = true;
+            }
+        }
     }
+    
+    public void removeBrick(int i, int j) {
+        this.wall[i][j] = false; 
+    }
+    
     /**
      * Tarkistaa, onko pallo pudonnut alustan alapuolelle.
      * @return true, jos pallon keskipiste on alempana kuin alusta
@@ -76,9 +86,13 @@ public class Breakout {
      */
     
     public boolean fall() {
-        if ((ball.getY()) < 12.5) {
+        if (ball.getY() > 5) {
             return true;
+        } else {
+        return false;
         }
-        return false; 
     }
+    
 }
+
+    
