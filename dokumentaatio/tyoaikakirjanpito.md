@@ -16,4 +16,5 @@
 | 1.5.    | 3 | JavaFX:n ja tapahtumakäsittelijän rakentelua |
 | 2.5.    | 4 | Tapahtumakäsittelijän jatkotyöstöä, dokumentaatiota|
 | 3.5.    | 2 | Tapahtumakäsittelijän kehittelyä, alustan liikkeen siistimistä |
-| **Yhteensä**	| 42 	| 	|
+| 4.5.    | 3 | Testausta, sovelluslogiikan eriyttämistä, dokumentointia | 
+| **Yhteensä**	| 45 	| 	|
