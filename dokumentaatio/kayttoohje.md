@@ -3,7 +3,7 @@
 Ohjelma voidaan käynnistää komentorivillä komennolla java -jar breakout.jar
 
 ## Päävalikko
-Kun ohjelma käynnistetään, aukeaa päävalikko. Valikosta voi aloittaa uuden pelin, tarkastella aiempia pelituloksia, lukea pelin ohjeet sekä sulkea sovelluksen.
+Kun ohjelma käynnistetään, aukeaa päävalikko. Valikosta voi aloittaa uuden pelin, tarkastella aiempia pelituloksia, lukea pelin ohjeet sekä sulkea sovelluksen. <br>
 ![menu](https://user-images.githubusercontent.com/73749539/117052694-b3adc280-ad20-11eb-8faa-4532a829aae3.png)
 
 
