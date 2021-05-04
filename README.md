@@ -7,7 +7,7 @@ Breakout on peli, jossa pelaaja pyrkii hajottamaan tiiliseinää pallon avulla. 
 [Työaikakirjanpito](https://github.com/esostolv/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md) <br>
 ## Releaset
 [Viikko5](https://github.com/esostolv/ot-harjoitustyo/releases/tag/viikko5) <br>
-[viikko6](https://github.com/esostolv/ot-harjoitustyo/releases/tag/viikko6) <br>
+[Viikko6](https://github.com/esostolv/ot-harjoitustyo/releases/tag/viikko6) <br>
 ## Komentoriviohjeet
 ### Testaus
 Testit suoritetaan komentorivillä komennolla "*mvn test*" <br>
