@@ -8,7 +8,8 @@ Käyttöliittymä on toteutettu JavaFX:llä. Siinä on neljä erilaista näkymä
 <br> Luokka *main* on sovelluksen pääluokka, josta käynnistetään varsinainen käyttöliittymä luokassa *ui*. *Main*-luokka on olemassa, jotta generoitavan -jar-tiedoston pääluokka ei perisi JavaFX:n luokkaa *Application*. <br>
 <br> Luokassa *ui* tapahtuu käyttöliittymän luonti. Jokainen käyttöliittymän neljästä näkymästä luodaan omassa metodissaan. 
 # Sovelluslogiikka
-Sovelluslogiikka on sijoitettu yhden pakkauksen sisään. Luokka Breakout käsittelee pelin tapahtumat ja luo pelissä tarvittavat oliot: pallon, alustan ja tiiliseinän. <br>
+Sovelluslogiikka on sijoitettu yhden pakkauksen sisään. Luokka *Breakout* käsittelee pelin tapahtumat ja luo pelissä tarvittavat oliot: pallon, alustan ja tiiliseinän. <br>
+<br> Luokat *Ball*, *Pad* ja *Wall* ovat pallon, alustan ja tiilten luontia varten: kukin luokka luo kyseisen olion ja oliota vastaavan muodon. Lisäksi luokat sisältävät metodit pallon ja alustan liikuttamiseen. 
 Ohjelman luokkakaavio:<br>
 ![Luokkakaavio2](https://user-images.githubusercontent.com/73749539/117053625-dab8c400-ad21-11eb-82ea-07276bd53b50.png)
 
