@@ -14,7 +14,7 @@ Sovelluksella on vain yhdenlaisia käyttäjiä. Käyttäjä voi pelata peliä. P
     - Peli luo alustan, pallon ja seinän [*tehty*]
     - Pallo lähtee liikkeelle, kun painaa nuolinäppäimiä
     - Alusta liikkuu sivuille nuolinäppäimillä [**tehty viikolla 6**]
-    - Pallo liikkuu ylös, kunnes törmää seinään / tiileen
+    - Pallo liikkuu ylös, kunnes törmää seinään / tiileen [**aloitettu viikolla 6, törmäysten käsittely kesken**]
     - Tiili tuhoutuu, kun pallo osuu siihen
     - Peli päättyy, jos pallo putoaa laudan ohi [**tehty viikolla 6**]
     - Peli päättyy, kun kaikki tiilet on tuhottu
