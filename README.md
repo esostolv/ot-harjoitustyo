@@ -9,13 +9,14 @@ Breakout on peli, jossa pelaaja pyrkii hajottamaan tiiliseinää pallon avulla. 
 [Viikko5](https://github.com/esostolv/ot-harjoitustyo/releases/tag/viikko5)
 ## Komentoriviohjeet
 ### Testaus
-Testit suoritetaan komentorivillä komennolla "mvn test" <br>
-Testauskattavuusraportti luodaan komentorivillä komennolla "mvn jacoco:report" <br> 
-Testikattavuusraportti löytyy tiedostona nimellä index hakemistosta target/site/jacoco <br>
+Testit suoritetaan komentorivillä komennolla "*mvn test*" <br>
+Testauskattavuusraportti luodaan komentorivillä komennolla "*mvn jacoco:report*" <br> 
+Testikattavuusraportti löytyy tiedostona nimellä *index.html* hakemistosta *target/site/jacoco* <br>
 ### Suoritettavan jarin generointi
-Jar-tiedosto voidaan generoida komentorivillä komennolla "mvn package" <br>
+Jar-tiedosto voidaan generoida komentorivillä komennolla "*mvn package*" <br>
 ### Checkstyle-tarkastus
-Checkstyle-tarkastukset suoritetaan komentorivillä komennolla "mvn jxr:jxr checkstyle:checkstyle" <br>
-Checkstyle-raportti löytyy tiedostona nimellä checkstyle hakemistosta target/site <br>
+Checkstyle-tarkastukset suoritetaan komentorivillä komennolla "*mvn jxr:jxr checkstyle:checkstyle*" <br>
+Checkstyle-raportti löytyy tiedostona nimellä *checkstyle.html* hakemistosta *target/site* <br>
 ### Javadocin generointi
-Javadoc-raportti voidaan generoida komentorivillä komennolla "mvn javadoc:javadoc" <br>
+Javadoc-raportti voidaan generoida komentorivillä komennolla "*mvn javadoc:javadoc*" <br>
+Javadoc-raportti löytyy tiedostona nimellä *index.html* hakemistosta *target/site/apidocs*
