@@ -1,4 +1,4 @@
-# Vaativuusmäärittely <h1>
+# Vaatimusmäärittely <h1>
 ## Sovelluksen tarkoitus <h2>
 Sovellus on Breakout-peli, jossa pelaaja tuhoaa ruudun yläosassa olevia laatikoita pallon ja alustan avulla. Kun pallo osuu laatikkoon, laatikko tuhoutuu, pelaaja saa pisteen, ja pallo kimpoaa takaisin alas. Kun pallo tulee ruudun alaosaan ja osuu alutaan, pallo kimpoaa takaisin ylös. Jos pallo ei osu alustaan, se putoaa, ja peli päättyy. Peli päättyy myös, kun kaikki laatikot on tuhottu.
 ## Käyttäjät <h2>
