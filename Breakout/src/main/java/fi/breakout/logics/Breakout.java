@@ -22,6 +22,8 @@ public class Breakout {
     private Pad pad;
     private Timeline timeline;
     private boolean[][] wall;
+    private int xDir;
+    private int yDir;
     
     /**
      * Metodi alustaa uuden pelin ja luo pallon ja alustan.
@@ -29,6 +31,23 @@ public class Breakout {
     public Breakout() {
         this.ball = new Ball();
         this.pad = new Pad();
+        this.xDir = 1;
+        this.yDir = -1;
+    }
+    public void setxDir(int x) {
+        this.xDir = x;
+    }
+    
+    public void setyDir(int y) {
+        this.yDir = y;
+    }
+    
+    public int getxDir() {
+        return this.xDir;
+    }
+    
+    public int getyDir() {
+        return this.yDir;
     }
     
     public Ball getBall() {
@@ -66,7 +85,17 @@ public class Breakout {
      */
     
     public boolean fall() {
-        if (ball.getY() > 5) {
+        if (ball.getY() > 1) {
+            if (ball.getX() < pad.getX() + 30 && ball.getX() > pad.getX() -30) {
+                if (ball.getX() >= pad.getX()) {
+                    setxDir(1);
+                    setyDir(-1);
+                    return false; 
+                }
+                setxDir(-1);
+                setyDir(-1);
+                return false; 
+            }
             return true;
         } else {
             return false;

@@ -33,13 +33,20 @@ public class Ball {
     }
     
     /**
-     * Metodi palauttaa pallon keskipisteen y-koordinaatin muutoken alkuperäiseen nähden.
+     * Metodi palauttaa pallon keskipisteen y-koordinaatin muutoksen alkuperäiseen nähden.
      * @return pallon y-koordinaatin muutos
      */
     public double getY() {
         return ball.getTranslateY();
     }
     
+    /**
+     * Metodi palauttaa pallon keskipisteen x-koordinaatin muutoksen alkuperäiseen nähden.
+     * @return pallon x-koordinaatin muutos
+     */
+    public double getX() {
+        return ball.getTranslateX();
+    }
     /**
      * Metodi palauttaa pallon.
      * @return ball pallo 
@@ -61,16 +68,24 @@ public class Ball {
      * @param dirX x-suunta
      * @param dirY y-suunta
      */
-    public void move(int dirX, int dirY) {
-        this.ball.setTranslateX(ball.getTranslateX() + dirX);
-        this.ball.setTranslateY(ball.getTranslateY() + dirY);
-        if (ball.getTranslateX() > 270) {
-            this.ball.setTranslateX(ball.getTranslateX() - dirX);
+    public void move(Breakout breakout, int dirX, int dirY) {
+        this.ball.setTranslateX(this.ball.getTranslateX() + dirX);
+        this.ball.setTranslateY(this.ball.getTranslateY() + dirY);
+        if (ball.getTranslateX() > 300) {
+            this.ball.setTranslateX(this.ball.getTranslateX() - dirX);
+            breakout.setxDir(-1);
         }
-        if (ball.getTranslateX() < 270) {
-            this.ball.setTranslateX(ball.getTranslateX() + dirX);
+        if (ball.getTranslateX() < -300) {
+            this.ball.setTranslateX(this.ball.getTranslateX() - dirX);
+            breakout.setxDir(1);
+        }
+        if(ball.getTranslateY() < -385) {
+            this.ball.setTranslateY(this.ball.getTranslateY() - dirY);
+            breakout.setyDir(1);
         }
     }
+    
+    
     
     
 }

@@ -78,7 +78,7 @@ public class Ui extends Application {
                 if (pressedButtons.getOrDefault(KeyCode.RIGHT, false)) {
                     breakout.getPad().move(1);
                 }
-                breakout.getBall().move(1, -1);
+                breakout.getBall().move(breakout, breakout.getxDir(), breakout.getyDir());
                 if (breakout.fall() == true) {
                     stop();
                 }
