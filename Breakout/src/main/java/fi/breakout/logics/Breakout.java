@@ -33,6 +33,8 @@ public class Breakout {
         this.pad = new Pad();
         this.xDir = 1;
         this.yDir = -1;
+        this.wall = new boolean[12][3];
+        createWall();
     }
     public void setxDir(int x) {
         this.xDir = x;
@@ -101,6 +103,28 @@ public class Breakout {
             return false;
         }
     }
+        
+    public void checkCollision() {
+        if (ball.getY() < -325) {
+            int x = (int) ball.getX() + 300;
+            int i = (x - (x%50)) / 50;
+            System.out.println(x + " & " + x%50 + " & " + i);
+            if (ball.getY() >= -345 && this.wall[i][2] == true) {
+                this.wall[i][2] = false;
+                setyDir(1);
+            }
+            if (ball.getY() >= -365 && ball.getY() < -345 && this.wall[i][1] == true) {
+                this.wall[i][1] = false;
+                setyDir(1);
+            }
+            if (ball.getY() >= -385 && ball.getY() < 365 &&
+                    this.wall[i][0] == true) {
+                this.wall[i][0] = false;
+                setyDir(1);
+            }
+        }
+    }
+    
     
     /**
      * Metodi palauttaa tiedon, onko kysytty tiili hajonnut. 

@@ -57,7 +57,8 @@ public class Ui extends Application {
         board.getChildren().add(breakout.getPad().getPad());
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 3; j++) {
-                board.getChildren().add(new Wall(i * 50, j * 20, 20, 50).getWall());
+                Wall s = new Wall(i * 50, j * 20, 20, 50);
+                board.getChildren().add(s.getWall());
             }
         }
         
@@ -79,6 +80,7 @@ public class Ui extends Application {
                     breakout.getPad().move(1);
                 }
                 breakout.getBall().move(breakout, breakout.getxDir(), breakout.getyDir());
+                breakout.checkCollision();
                 if (breakout.fall() == true) {
                     stop();
                 }
