@@ -18,4 +18,5 @@
 | 3.5.    | 2 | Tapahtumakäsittelijän kehittelyä, alustan liikkeen siistimistä |
 | 4.5.    | 3 | Testausta, sovelluslogiikan eriyttämistä, dokumentointia | 
 | 9.5.    | 2 | Pallon liikkeen parantelua |
-| **Yhteensä**	| 47 	| 	|
+| 10.5.   | 2 | Sovelluslogiikan laajentamista |
+| **Yhteensä**	| 49 	| 	|
