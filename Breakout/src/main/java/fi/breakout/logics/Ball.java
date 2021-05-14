@@ -79,7 +79,7 @@ public class Ball {
             this.ball.setTranslateX(this.ball.getTranslateX() - dirX);
             breakout.setxDir(1);
         }
-        if(ball.getTranslateY() < -385) {
+        if (ball.getTranslateY() < -385) {
             this.ball.setTranslateY(this.ball.getTranslateY() - dirY);
             breakout.setyDir(1);
         }

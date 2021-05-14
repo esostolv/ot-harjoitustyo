@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package fi.breakout.logics;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.paint.Color;
 /**
@@ -15,6 +16,7 @@ public class Wall {
     private Rectangle wall;
     private int height;
     private int width;
+    private boolean status;
 
     /**
      * Konstruktori luo uuden tiilen
@@ -27,6 +29,7 @@ public class Wall {
         createBrick(x, y, h, w);
         this.height = h;
         this.width = w;
+        this.status = true;
     }
     
     /**
@@ -46,7 +49,13 @@ public class Wall {
         wall.setStroke(Color.WHITE);
     }
     
-  
+    public boolean getStatus() {
+        return this.status;
+    }
+    
+    public void setToFalse() {
+        this.status = false;
+    }
     
     public Rectangle getWall() {
         return wall;

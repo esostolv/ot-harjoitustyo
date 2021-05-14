@@ -21,20 +21,23 @@ public class Breakout {
     private Ball ball;
     private Pad pad;
     private Timeline timeline;
-    private boolean[][] wall;
+    private Wall[][] wall;
     private int xDir;
     private int yDir;
+    private int broken;
     
     /**
      * Metodi alustaa uuden pelin ja luo pallon ja alustan.
      */
-    public Breakout() {
+    public Breakout(Pane pane) {
         this.ball = new Ball();
         this.pad = new Pad();
         this.xDir = 1;
         this.yDir = -1;
-        this.wall = new boolean[12][3];
-        createWall();
+        this.wall = new Wall[12][3];
+        createWall(pane);
+        this.broken = 0;
+        
     }
     public void setxDir(int x) {
         this.xDir = x;
@@ -63,21 +66,15 @@ public class Breakout {
     /**
      * Metodi luo uuden 12*3-kokoisen seinän ja luo listan seinän tiilten tilasta.
      */
-    public void createWall() {
+    public void createWall(Pane pane) {
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 3; j++) {
-                this.wall[i][j] = true;
+                this.wall[i][j] = new Wall(i * 50, j * 20, 20, 50);
+                pane.getChildren().add(this.wall[i][j].getWall());
+                //pane.getChildren().remove(this.wall[i][j].getWall());
+                //pane.getChildren().clear();
             }
         }
-    }
-    
-    /**
-     * Metodi muuttaa tiilten kirjanpidossa valitun tiilen hajotetuksi.
-     * @param i tiilen x-koordinaatti
-     * @param j tiilen y-koordinaatti
-     */
-    public void removeBrick(int i, int j) {
-        this.wall[i][j] = false; 
     }
     
     /**
@@ -87,8 +84,8 @@ public class Breakout {
      */
     
     public boolean fall() {
-        if (ball.getY() > 1) {
-            if (ball.getX() < pad.getX() + 30 && ball.getX() > pad.getX() -30) {
+        if (ball.getY() > 5) {
+            if (ball.getX() < pad.getX() + 30 && ball.getX() > pad.getX() - 30) {
                 if (ball.getX() >= pad.getX()) {
                     setxDir(1);
                     setyDir(-1);
@@ -103,28 +100,30 @@ public class Breakout {
             return false;
         }
     }
-        
-    public void checkCollision() {
+    /**
+     * Metodi laskee ensin, kuinka monennen tiilen kohdalla pallo on vaakasuunnassa ja 
+     * tarkistaa sen jälkeen, osuuko pallo tiileen. Jos pallo osuu ehjään tiileen, tiili
+     * poistetaan ruudulta, merkitään hajonneeksi ja pallo lähtee alaspäin. 
+     * @param pane Pane-olio, jolta tiili mahdollisesti poistetaan. 
+     */    
+    public void checkCollision(Pane pane) {
         if (ball.getY() < -325) {
             int x = (int) ball.getX() + 300;
-            int i = (x - (x%50)) / 50;
-            System.out.println(x + " & " + x%50 + " & " + i);
-            if (ball.getY() >= -345 && this.wall[i][2] == true) {
-                this.wall[i][2] = false;
-                setyDir(1);
+            int i = (x - (x % 50)) / 50;
+            if (i == 12) {
+                i = 11;
             }
-            if (ball.getY() >= -365 && ball.getY() < -345 && this.wall[i][1] == true) {
-                this.wall[i][1] = false;
-                setyDir(1);
-            }
-            if (ball.getY() >= -385 && ball.getY() < 365 &&
-                    this.wall[i][0] == true) {
-                this.wall[i][0] = false;
-                setyDir(1);
+            for (int j = 2; j >= 0; j--) {
+                if (ball.getY() - 5 >= -385 + j * 20 && ball.getY() - 5 < -365 + j * 20 
+                        && this.wall[i][j].getStatus() == true) {
+                    pane.getChildren().remove(this.wall[i][j].getWall());
+                    this.wall[i][j].setToFalse();
+                    setyDir(1);
+                    broken += 1;
+                }
             }
         }
     }
-    
     
     /**
      * Metodi palauttaa tiedon, onko kysytty tiili hajonnut. 
@@ -133,7 +132,11 @@ public class Breakout {
      * @return 
      */
     public boolean getStatus(int i, int j) {
-        return wall[i][j];
+        return wall[i][j].getStatus();
+    }
+    
+    public int getBroken() {
+        return this.broken;
     }
     
 }

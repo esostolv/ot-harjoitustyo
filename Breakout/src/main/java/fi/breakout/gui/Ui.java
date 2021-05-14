@@ -29,6 +29,7 @@ import javafx.stage.Stage;
  */
 public class Ui extends Application {
     private Breakout breakout;
+    public Pane board;
     /**
      * Metodi luo uuden käyttöliittymän ja avaa valikon.
      * @param window luo uuden stagen
@@ -38,7 +39,6 @@ public class Ui extends Application {
     @Override
     public void start(Stage window) throws Exception {
         Scene menu = menu(window);
-        this.breakout = new Breakout();
         window.setTitle("BREAKOUT");
         window.setScene(menu);
         window.show();
@@ -50,17 +50,12 @@ public class Ui extends Application {
      * @return game scene, jossa peli tapahtuu
      */
     public Scene play() {
-        Pane board = new Pane();
+        board = new Pane();
         board.setPrefSize(600, 400);
-        Breakout breakout = new Breakout();
+        Breakout breakout = new Breakout(board);
         board.getChildren().add(breakout.getBall().getBall());
         board.getChildren().add(breakout.getPad().getPad());
-        for (int i = 0; i < 12; i++) {
-            for (int j = 0; j < 3; j++) {
-                Wall s = new Wall(i * 50, j * 20, 20, 50);
-                board.getChildren().add(s.getWall());
-            }
-        }
+        
         
         Scene game = new Scene(board);
         Map<KeyCode, Boolean> pressedButtons = new HashMap<>();
@@ -80,8 +75,9 @@ public class Ui extends Application {
                     breakout.getPad().move(1);
                 }
                 breakout.getBall().move(breakout, breakout.getxDir(), breakout.getyDir());
-                breakout.checkCollision();
-                if (breakout.fall() == true) {
+                breakout.checkCollision(board);
+                //game.getChildren().remove(breakout.wall[2][2].getWall());
+                if (breakout.fall() == true || breakout.getBroken() == 36) {
                     stop();
                 }
             }
