@@ -19,4 +19,5 @@
 | 4.5.    | 3 | Testausta, sovelluslogiikan eriyttämistä, dokumentointia | 
 | 9.5.    | 2 | Pallon liikkeen parantelua |
 | 10.5.   | 2 | Sovelluslogiikan laajentamista |
-| **Yhteensä**	| 49 	| 	|
+| 15.5.   | 2 | Sovelluslogiikan laajentamista, koodin siistimistä ja testausta |
+| **Yhteensä**	| 51 	| 	|
