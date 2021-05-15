@@ -1,6 +1,12 @@
+# Käyttöohje
 
-# Ohjelman käynnistäminen 
+## Konfigurointi
+Ohjelman käynnistyshakemistossa tulee olla tiedosto *config.properties*, jossa määritellään ohjelman käyttämän tietokantatiedoston nimi. <br>
+
+## Ohjelman käynnistäminen 
 Ohjelma voidaan käynnistää komentorivillä komennolla java -jar breakout.jar
+
+
 
 ## Päävalikko
 Kun ohjelma käynnistetään, aukeaa päävalikko. Valikosta voi aloittaa uuden pelin, tarkastella aiempia pelituloksia, lukea pelin ohjeet sekä sulkea sovelluksen. <br>
