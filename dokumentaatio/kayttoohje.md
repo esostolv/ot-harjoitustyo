@@ -1,11 +1,9 @@
 # Käyttöohje
 
-## Konfigurointi
-Ohjelman käynnistyshakemistossa tulee olla tiedosto *config.properties*, jossa määritellään ohjelman käyttämän tietokantatiedoston nimi. <br>
-
 ## Ohjelman käynnistäminen 
-Ohjelma voidaan käynnistää komentorivillä komennolla java -jar breakout.jar
-
+Lataa uusimmasta releasesta jar-tiedosto tietokoneellesi. Ohjelma voidaan käynnistää komentorivillä jar-tiedoston tallennushakemistossa komennolla *java -jar breakout.jar*. <br>
+<br>
+Toinen mahdollisuus ohjelman käynnistämiseen on ladata uusimmasta releasesta projekti zip-tiedostona, jolloin ohjelma voidaan suorittaa komentorivillä projektin juurikansiossa komennolla *mvn compile exec:java -Dexec.mainClass=fi.breakout.gui.Main*
 
 
 ## Päävalikko
@@ -19,7 +17,9 @@ Pelin tarkoituksena on tuhota ruudun yläreunassa oleva tiiliseinä pallon avull
 
 <br>
 Peli käynnistyy heti, kun päävalikosta valitaan "Uusi peli". Tällöin pallo lähtee liikkumaan ylöspäin kohti tiiliseinää. Kun pallo osuu tiileen, tiili tuhoutuu,
-ja pallon suunta muuttuu kohti alustaa. Kun pallo osuu alustaan, pallo kimpoaa takaisin ylöspäin. Pelaaja voi ohjailla alustaa sivusuunnassa nuolinäppäimillä. Peli päättyy, kun kaikki tiilet on tuhottu tai kun pallo putoaa alas alustan ohi.
+ja pallon suunta muuttuu kohti alustaa. Kun pallo osuu alustaan, pallo kimpoaa takaisin ylöspäin. Pelaaja voi ohjailla alustaa sivusuunnassa nuolinäppäimillä. Peli päättyy, kun kaikki tiilet on tuhottu tai kun pallo putoaa alas alustan ohi.<br>
+<br>
+Pelin jälkeen avautuvasta valikosta voi tallettaa pelituloksen. Tällöin ohjelma pyytää käyttäjältä syötteenä käyttäjän nimen, ja ohjelma tallettaa nimen ja pistemäärän tietokantaan. 
 
 ## Aiempien tulosten tarkastelu
 
