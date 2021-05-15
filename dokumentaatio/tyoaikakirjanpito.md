@@ -20,4 +20,5 @@
 | 9.5.    | 2 | Pallon liikkeen parantelua |
 | 10.5.   | 2 | Sovelluslogiikan laajentamista |
 | 15.5.   | 2 | Sovelluslogiikan laajentamista, koodin siistimistä ja testausta |
-| **Yhteensä**	| 51 	| 	|
+| 16.5.   | 2 | Tietokannan valmistelua ja testausta| 
+| **Yhteensä**	| 53 	| 	|
