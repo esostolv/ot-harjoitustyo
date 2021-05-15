@@ -18,5 +18,9 @@ Pelin alustuksen toiminnallisuutta kuvataan sekvenssikaavion avulla. Sekvenssika
 
 ![Breakout](https://user-images.githubusercontent.com/73749539/117054328-a7c30000-ad22-11eb-9b68-3a32d672c190.png)
 
+Varsinainen pelin tapahtumien käsittely toteutetaan *Ui*-luokassa AnimationTimer()-tapahtumankäsittelijällä. Jokaisessa tapahtumankäsittelyssä toistuu seuraavat asiat: alustan liikuttaminen, pallon liikuttaminen, törmäyksen tarkistaminen, pallon putoamisen tarkistaminen. Tapahtumakierros, jossa pallo hajottaa tiilen, on kuvattu sekvenssikaaviona. Metodeihin liittyvien if-lauseiden haarat on jätetty pois kaavion selkeyttämisen vuoksi.<br> 
+![Sekvenssikaavio3](https://user-images.githubusercontent.com/73749539/118378154-6102bf00-b5da-11eb-8c9d-878193dd2b4e.png)
+
+
 
 
