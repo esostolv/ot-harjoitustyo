@@ -26,5 +26,5 @@ Sovelluksella on vain yhdenlaisia käyttäjiä. Käyttäjä voi pelata peliä. P
 - helpotuksena käyttäjä voisi valita leveämmän alustan
 - toinen käyttäjäryhmä: ylläpito, joka voi nollata pelitulostiedot
 ## Toimintaympäristön rajoitteet <h2>
-- käyttäjän pelitulokset talletetaan tietokoneessa olevaan tietokantaan
+- käyttäjän pelitulokset talletetaan tietokoneessa olevaan tietokantaan, joka luodaan sovelluksen toimesta
 - ohjelmistoa käytetään Linux-käyttöjärjestelmässä 
