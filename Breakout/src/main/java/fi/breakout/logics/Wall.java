@@ -49,24 +49,29 @@ public class Wall {
         wall.setStroke(Color.WHITE);
     }
     
+    /**
+     * palauttaa tiedon, onko tiili ehjä vai hajotettu
+     * @return this.status tieto tiilen tilasta: true = ehjä, false = hajotettu
+     */
     public boolean getStatus() {
         return this.status;
     }
     
+    /**
+     * Merkitsee tiilen hajotetuksi, eli asettaa tilaksi false.
+     */
     public void setToFalse() {
         this.status = false;
     }
     
+    /**
+     * palauttaa seinäolion
+     * @return wall seinäolio
+     */
     public Rectangle getWall() {
         return wall;
     }
     
-    public int getHeight() {
-        return height;
-    }
     
-    public int getWidth() {
-        return width;
-    }
 
 }

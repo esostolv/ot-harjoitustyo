@@ -17,7 +17,6 @@ public class Main {
      * @param args 
      */
     public static void main(String[] args) {
-        //Breakout b = new Breakout();
         Ui ui = new Ui();
         ui.launch();
     }

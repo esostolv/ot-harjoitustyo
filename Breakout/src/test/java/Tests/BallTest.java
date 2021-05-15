@@ -21,13 +21,6 @@ import static org.junit.Assert.*;
  */
 public class BallTest {
     
-    
-    @Test
-    public void radiusOfBallIsCorrect() {
-        Ball ball = new Ball();
-        assertEquals(5, ball.getRadius());
-    }
-    
     @Test
     public void locationOfBallIsCorrect() {
         Ball ball = new Ball();
@@ -45,7 +38,8 @@ public class BallTest {
         assertEquals(-10, ball.getY(), 0.1);
     }
     
-    @Test public void ballDoesntGoOutsideRight() {
+    @Test 
+    public void ballDoesntGoOutsideRight() {
         Breakout breakout = new Breakout(new Pane());
         Ball ball = new Ball();
         for (int i = 0; i < 305; i++) {
@@ -55,7 +49,8 @@ public class BallTest {
         assertEquals(0, ball.getY(), 0.1);
     }
     
-    @Test public void ballDoesntGoOutsideLeft() {
+    @Test 
+    public void ballDoesntGoOutsideLeft() {
         Breakout breakout = new Breakout(new Pane());
         Ball ball = new Ball();
         for (int i = 0; i < 305; i++) {
@@ -63,6 +58,21 @@ public class BallTest {
         }
         assertEquals(-300, ball.getX(), 0.1);
         assertEquals(0, ball.getY(), 0.1);
+    }
+    
+    @Test 
+    public void ballDoesntGoOutsideUp() {
+        Breakout breakout = new Breakout(new Pane());
+        for (int i = 0; i < 3; i++) {
+            breakout.getWall()[6][i].setToFalse();
+            breakout.getWall()[5][i].setToFalse();
+        }
+        Ball ball = new Ball();
+        for (int i = 0; i < 79; i++) {
+            ball.move(breakout, 0, -5);
+        }
+        assertEquals(0, ball.getX(), 0.1);
+        assertEquals(-385, ball.getY(), 0.1);
     }
 
 }

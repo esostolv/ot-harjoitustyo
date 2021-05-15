@@ -22,15 +22,5 @@ public class WallTest {
     public WallTest() {
     }
     
-    @Test
-    public void heightOfWallIsCorrect() {
-        Wall wall = new Wall(0, 0, 20, 50);
-        assertEquals(20, wall.getHeight());
-    }
     
-    @Test
-    public void widthOfWallIsCorrect() {
-        Wall wall = new Wall(0, 0, 20, 50);
-        assertEquals(50, wall.getWidth());
-    }
 }

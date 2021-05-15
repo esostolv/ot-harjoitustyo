@@ -39,26 +39,50 @@ public class Breakout {
         this.broken = 0;
         
     }
+    /**
+     * Metodi asettaa pallon vaakasuuntaisen kulkusuunnan
+     * @param x vaakasuuntainen kulkusuunta: -1 vasen, 1 oikea
+     */
     public void setxDir(int x) {
         this.xDir = x;
     }
     
+    /**
+     * Metodi asettaa pallon pystysuuntaisen kulkusuunnan
+     * @param x vaakasuuntainen kulkusuunta: -1 ylös, 1 alas
+     */
     public void setyDir(int y) {
         this.yDir = y;
     }
     
+    /**
+     * Palauttaa pallon vaakasuuntaisen kulkusuunnan
+     * @return this.xDir pallon vaakasuuntainen kulkusuunta
+     */
     public int getxDir() {
         return this.xDir;
     }
     
+    /**
+     * Palauttaa pallon pystysuuntaisen kulkusuunnan
+     * @return this.xDir pallon pystysuuntainen kulkusuunta
+     */
     public int getyDir() {
         return this.yDir;
     }
     
+    /**
+     * Palauttaa pallon
+     * @return this.ball pallo
+     */
     public Ball getBall() {
         return this.ball;
     }
     
+    /**
+     * Palauttaa alustan
+     * @return this.pad alusta
+     */
     public Pad getPad() {
         return this.pad;
     }
@@ -126,15 +150,17 @@ public class Breakout {
     }
     
     /**
-     * Metodi palauttaa tiedon, onko kysytty tiili hajonnut. 
-     * @param i tiilen x-koordinaatti
-     * @param j tiilen y-koordinaatti
-     * @return 
+     * Palauttaa listan tiilistä
+     * @return this.wall lista tiilistä
      */
-    public boolean getStatus(int i, int j) {
-        return wall[i][j].getStatus();
+    public Wall[][] getWall() {
+        return this.wall;
     }
     
+    /**
+     * Palauttaa tiedon, kuinka moni tiili on rikottu
+     * @return this.broken rikottujen tiilten määrä 
+     */
     public int getBroken() {
         return this.broken;
     }

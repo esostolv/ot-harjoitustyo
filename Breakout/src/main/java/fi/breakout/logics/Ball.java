@@ -55,13 +55,6 @@ public class Ball {
         return ball;
     }
     
-    /**
-     * Metodi palauttaa pallon säteen
-     * @return pallon säde
-     */
-    public int getRadius() {
-        return 5;
-    }
     
     /**
      * Metodi liikuttaa palloa annettujen parametrien mukaiseen suuntaan
@@ -84,8 +77,4 @@ public class Ball {
             breakout.setyDir(1);
         }
     }
-    
-    
-    
-    
 }
