@@ -1,4 +1,4 @@
-*# Breakout
+# Breakout
 Breakout on peli, jossa pelaaja pyrkii hajottamaan tiiliseinää pallon avulla. Palloa ohjaillaan oikeaan suuntaan liikuttelemalla ruudun alareunassa olevaa alustaa.  
 ## Dokumentaatio 
 [Käyttöohje](https://github.com/esostolv/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)<br>
