@@ -1,4 +1,4 @@
-# Breakout
+*# Breakout
 Breakout on peli, jossa pelaaja pyrkii hajottamaan tiiliseinää pallon avulla. Palloa ohjaillaan oikeaan suuntaan liikuttelemalla ruudun alareunassa olevaa alustaa.  
 ## Dokumentaatio 
 [Käyttöohje](https://github.com/esostolv/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)<br>
@@ -7,9 +7,12 @@ Breakout on peli, jossa pelaaja pyrkii hajottamaan tiiliseinää pallon avulla. 
 [Työaikakirjanpito](https://github.com/esostolv/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md) <br>
 [Testausdokumentti](https://github.com/esostolv/ot-harjoitustyo/blob/master/dokumentaatio/testausdokumentti.md)<br>
 ## Releaset
-[Viikko5](https://github.com/esostolv/ot-harjoitustyo/releases/tag/viikko5) <br>
+[Loppupalautus](https://github.com/esostolv/ot-harjoitustyo/releases/tag/loppupalautus) <br>
 [Viikko6](https://github.com/esostolv/ot-harjoitustyo/releases/tag/viikko6) <br>
+[Viikko5](https://github.com/esostolv/ot-harjoitustyo/releases/tag/viikko5) <br>
 ## Komentoriviohjeet
+### Ohjelman suoritus
+Ohjelma voidaan suorittaa komentoriviltä komennolla *mvn compile exec:java -Dexec.mainClass=fi.breakout.gui.Main*. Mikäli ohjelmasta on ladattu tai luotu jar-tiedosto, ohjelman voi suorittaa jar-tiedoston hakemistossa komentoriviltä komennolla *java -jar breakout.jar*.
 ### Testaus
 Testit suoritetaan komentorivillä komennolla "*mvn test*" <br>
 Testauskattavuusraportti luodaan komentorivillä komennolla "*mvn jacoco:report*" <br> 
