@@ -42,8 +42,6 @@ public class Statistics {
         try (PreparedStatement pstmt = connection.prepareStatement(statement)) {
             pstmt.setString(1, username);
             pstmt.setInt(2, score);
-            //pstmt.setInt(3, 0);
-            //pstmt.setInt(4, 0);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -108,10 +106,6 @@ public class Statistics {
         }
         return list;
     }
-    /**
-     * Metodi luo VBox-olion kymmenestä parhaasta tuloksesta.
-     * @return results VBox-olio, jossa 10 parhaan pelaajan nimi ja tulos
-     */
     
 }
 
