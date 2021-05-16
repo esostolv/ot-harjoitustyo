@@ -19,8 +19,7 @@ Pelin tarkoituksena on tuhota ruudun yläreunassa oleva tiiliseinä pallon avull
 Peli käynnistyy heti, kun päävalikosta valitaan "Uusi peli". Tällöin pallo lähtee liikkumaan ylöspäin kohti tiiliseinää. Kun pallo osuu tiileen, tiili tuhoutuu,
 ja pallon suunta muuttuu kohti alustaa. Kun pallo osuu alustaan, pallo kimpoaa takaisin ylöspäin. Pelaaja voi ohjailla alustaa sivusuunnassa nuolinäppäimillä. Peli päättyy, kun kaikki tiilet on tuhottu tai kun pallo putoaa alas alustan ohi.<br>
 <br>
-Pelin jälkeen avautuvasta valikosta voi tallettaa pelituloksen. Tällöin ohjelma pyytää käyttäjältä syötteenä käyttäjän nimen, ja ohjelma tallettaa nimen ja pistemäärän tietokantaan.<br> 
-<br> ![saveresult](https://user-images.githubusercontent.com/73749539/118395465-3b65cc00-b653-11eb-8f5a-cc009ae16e07.png)
+Pelin jälkeen avautuvasta valikosta voi tallettaa pelituloksen. Tällöin ohjelma pyytää käyttäjältä syötteenä käyttäjän nimen, ja ohjelma tallettaa nimen ja pistemäärän tietokantaan.<br>
 
 ## Aiempien tulosten tarkastelu
 
