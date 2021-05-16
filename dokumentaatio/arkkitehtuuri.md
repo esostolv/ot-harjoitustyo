@@ -26,6 +26,8 @@ Varsinainen pelin tapahtumien käsittely toteutetaan *Ui*-luokassa AnimationTime
 # Ohjelman rakenteen heikkoudet
 Pelin moottorina toimiva tapahtumankäsittely toteutetaan AnimationTimer()-metodin avulla käyttöliittymäluokassa *Ui*, vaikka kyseessä on enemmän sovelluslogiikkaan liittyvä ominaisuus, joka pitäisi käsitellä pakkauksen *logics* alla. <br>
 <br> Sovelluksen käyttöliittymän luova luokka on kohtuuttoman pitkä, sillä luokassa on lukuisia metodeita eri näkymien luomiseen. Nämä olisi järkevää erottaa omiksi luokikseen, tai ainakin ryhmitellä pariin-kolmeen pienempään luokkaan. <br
-<br> Ohjelman parametrit, kuten pelialueen olioiden mitat ja paikat, ovat sovelluksen koodissa nyt kovakoodattuina vakioina. Ohjelman laajentamisen kannalta näiden olisi hyvä olla erillisessä konfiguraatiotiedostossa, josta niitä olisi helppo tarvittaessa muokata. 
+<br> Ohjelman parametrit, kuten pelialueen olioiden mitat ja paikat, ovat sovelluksen koodissa nyt kovakoodattuina vakioina. Ohjelman laajentamisen kannalta näiden olisi hyvä olla erillisessä konfiguraatiotiedostossa, josta niitä olisi helppo tarvittaessa muokata.<br>
+<br>
+Laitoksen etätyöpöydän Cubbli Linux ei suostu suorittamaan ohjelman tietokantoja kaikissa kansioissa - esim. Downloads-kansiossa käyttöjärjestelmä antaa virheilmoituksen, että tietokanta olisi lukittu. 
 
 
