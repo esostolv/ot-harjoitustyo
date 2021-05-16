@@ -24,7 +24,8 @@ Sovelluksella on vain yhdenlaisia käyttäjiä. Käyttäjä voi pelata peliä. P
 ## Perusversiota laajentavat jatkokehitysideat <h2>
 - käyttäjä voi valita vaikeustason, jolloin pelissä on kenties monimutkaisempi "tiiliseinä" tai suurempi nopeus pallolla tai joitakin esteitä.
 - helpotuksena käyttäjä voisi valita leveämmän alustan
-- toinen käyttäjäryhmä: ylläpito, joka voi nollata pelitulostiedot
+- tilastojen nollaus
+- monipuolisemmat tilastot
 ## Toimintaympäristön rajoitteet <h2>
 - käyttäjän pelitulokset talletetaan tietokoneessa olevaan tietokantaan, joka luodaan sovelluksen toimesta
 - ohjelmistoa käytetään Linux-käyttöjärjestelmässä 
