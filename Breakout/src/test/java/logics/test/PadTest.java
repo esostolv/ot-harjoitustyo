@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Tests;
+package logics.test;
 
 import fi.breakout.logics.Pad;
 import org.junit.After;

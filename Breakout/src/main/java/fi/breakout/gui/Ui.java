@@ -5,7 +5,7 @@
  */
 package fi.breakout.gui;
 
-import fi.breakout.database.Statistics;
+import fi.breakout.dao.Statistics;
 import fi.breakout.logics.Ball;
 import fi.breakout.logics.Breakout;
 import fi.breakout.logics.Pad;
@@ -15,6 +15,7 @@ import java.io.FileInputStream;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -44,17 +45,13 @@ public class Ui extends Application {
     public Pane board;
     private Statistics stats;
     /**
-     * Metodi luo uuden käyttöliittymän ja avaa valikon.
+     * Metodi luo uuden tilastotietokannan ja käyttöliittymän sekä avaa valikon.
      * @param window luo uuden stagen
      * @throws Exception 
      */
-    
- 
-    
-
     @Override
     public void start(Stage window) throws Exception {
-        stats.createDatabase();
+        this.stats = new Statistics("jdbc:sqlite:database.db");
         Scene menu = menu(window);
         window.setTitle("BREAKOUT");
         window.setScene(menu);
@@ -69,11 +66,11 @@ public class Ui extends Application {
      * @param result tieto, voittiko käyttäjä edellisen pelin
      * @return scene uusi valikko 
      */
-    public Scene gameOver(Stage window, int result) {
+    public Scene gameOver(Stage window, int win, int score) {
         Label title = new Label();
-        if (result == 0) {
+        if (win == 0) {
             title = new Label("HÄVISIT PELIN");
-        } if (result == 1) {
+        } if (win == 1) {
             title = new Label("VOITIT PELIN");
         }
         title.setTextFill(Color.BLUE);
@@ -90,7 +87,7 @@ public class Ui extends Application {
         gameOver.setPrefSize(600, 400);
         gameOver.setAlignment(Pos.CENTER);
         newGame.setOnAction((event) -> window.setScene(play(window)));
-        save.setOnAction((event)-> window.setScene(saveResult(window)));
+        save.setOnAction((event)-> window.setScene(saveResult(window, score)));
         back.setOnAction((event) -> window.setScene(menu(window)));
         Scene scene = new Scene(gameOver);
         return scene;
@@ -102,17 +99,30 @@ public class Ui extends Application {
      * 
      * @return scene
      */
-    public Scene saveResult(Stage window) {
+    public Scene saveResult(Stage window, int score) {
         Label title = new Label("Anna nimi");
         TextField name = new TextField();
         Button save = new Button("Tallenna");
+        Button back = new Button("Takaisin");
         GridPane saveResult = new GridPane();
         saveResult.setPrefSize(600, 400);
         saveResult.setAlignment(Pos.CENTER);
         saveResult.add(title, 0, 0);
         saveResult.add(name, 0, 1);
         saveResult.add(save, 0, 2);
-        //save.setOnAction((event) ->);
+        saveResult.add(back, 0, 4);
+        save.setOnAction((event) -> {
+            String username = name.getText();
+            try {
+                stats.addResult(username, score);
+                Text success = new Text("Tallennus onnistui");
+                saveResult.add(success, 0, 3);
+                window.setScene(menu(window));
+            } catch (SQLException e) {
+                System.out.println("Talletus epäonnistui.");
+            }
+        });
+        back.setOnAction((event) -> window.setScene(menu(window)));
         Scene scene = new Scene(saveResult);
         return scene;
     }
@@ -150,11 +160,11 @@ public class Ui extends Application {
                 breakout.checkCollision(board);
                 if (breakout.fall() == true || breakout.getBroken() == 36) {
                     stop();
-                    window.setScene(gameOver(window, 0));
+                    window.setScene(gameOver(window, 0, breakout.getBroken()));
                 }
                 if (breakout.getBroken() == 36) {
                     stop();
-                    window.setScene(gameOver(window, 1));
+                    window.setScene(gameOver(window, 1, 36));
                 }
             }
         }.start();
@@ -185,8 +195,42 @@ public class Ui extends Application {
         menu.setAlignment(Pos.CENTER);
         newGame.setOnAction((event) -> window.setScene(play(window)));
         stop.setOnAction((event) -> System.exit(0));
+        stats.setOnAction((event) -> window.setScene(statistics(window)));
         instructions.setOnAction((event) -> window.setScene(instructions(window)));
         Scene scene = new Scene(menu);
+        return scene;
+    }
+    
+    /**
+     * Metodi luo uuden scenen, jossa käyttäjä voi tarkastella aiempia pelituloksia.
+     * Sceneen ilmestyy kymmenen parasta aiempaa tulosta sekä pistemäärien keskiarvo.
+     * @param window luo uuden stagen
+     * @return scene uusi scene, jossa pelin tilastot
+     */
+    public Scene statistics(Stage window) {
+        Label title = new Label("Tilastot");
+        title.setTextFill(Color.BLUE);
+        title.setFont(new Font("Arial", 20));
+        Button menu = new Button("Takaisin");
+        GridPane statistics = new GridPane();
+        statistics.setPrefSize(600, 400);
+        statistics.setAlignment(Pos.CENTER);
+        statistics.add(title, 0, 0);
+        List<String> list = stats.getResults();
+        VBox results = new VBox();
+        for (int i = 0; i < list.size(); i++) {
+            Label result = new Label(i + 1 + ". " + list.get(i));
+            results.getChildren().add(result);
+            if (i == 9) {
+                break;
+            }
+        }
+        statistics.add(results, 0, 1);
+        Text mean = new Text("Pisteiden keskiarvo: " + stats.getMean());
+        statistics.add(mean, 0, 2);
+        statistics.add(menu, 0, 3);
+        menu.setOnAction((event) -> window.setScene(menu(window)));
+        Scene scene = new Scene(statistics);
         return scene;
     }
     /**
