@@ -1,7 +1,8 @@
 # Arkkitehtuurikuvaus
 # Ohjelman rakenne
-Ohjelman rakenteessa sovelluslogiikka on erotettu omaan pakkaukseensa *logic*, ja JavaFX:llä toteutettu käyttöliittymä omaan pakkaukseensa *gui*. <br>
-![Pakkauskaavio](https://user-images.githubusercontent.com/73749539/117053177-50706000-ad21-11eb-9563-431832626863.png)
+Ohjelman rakenteessa sovelluslogiikka on erotettu omaan pakkaukseensa *logic*, ja JavaFX:llä toteutettu käyttöliittymä omaan pakkaukseensa *gui*. Tiedon pysyväistalletus toteutetaan tietokannan avulla pakkauksessa *dao*. <br>
+![Pakkauskaavio](https://user-images.githubusercontent.com/73749539/118396690-4d4a6d80-b659-11eb-9b54-00665cc354a3.png)
+
 
 # Käyttöliittymä
 Käyttöliittymä on toteutettu JavaFX:llä. Siinä on neljä erilaista näkymää *scene*-olioina: päävalikko, pelitila, pelitulosten tarkastelu sekä pelin ohjeet. Näkymistä yksi kerrallaan on sijoitettuna näkyviin stage-olioon. <br>
@@ -12,7 +13,8 @@ Sovelluslogiikka on sijoitettu yhden pakkauksen sisään. Luokka *Breakout* käs
 <br> Luokat *Ball*, *Pad* ja *Wall* ovat pallon, alustan ja tiilten luontia varten: kukin luokka luo kyseisen olion ja oliota vastaavan muodon. Lisäksi luokat sisältävät metodit pallon ja alustan liikuttamiseen. 
 Ohjelman luokkakaavio:<br>
 ![Luokkakaavio2](https://user-images.githubusercontent.com/73749539/117053625-dab8c400-ad21-11eb-82ea-07276bd53b50.png)
-
+# Tiedon pysyväistalletus
+Tietojen pysyväistalletus tapahtuu pakkauksen *breakout.dao* luokassa *Statistics*. Tiedon pysyväistalletus on toteutettu SQLite-tietokannan avulla. Sovelluksen käynnistyessä hakemistoon luodaan tarvittaessa uusi tietokantatiedosto. Pelin päätyttyä käyttäjä voi halutessaan tallettaa pelituloksensa ja nimimerkkinsä tietokantaan. 
 # Päätoiminnallisuudet
 Pelin alustuksen toiminnallisuutta kuvataan sekvenssikaavion avulla. Sekvenssikaaviossa on kuvattu ohjelmassa pelialustan luominen ja pallo-olion luominen peliin. Vastaavalla tavalla luodaan myös alusta sekä tiiliseinä peliä varten. <br>
 
